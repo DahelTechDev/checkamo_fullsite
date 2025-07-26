@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkamo - Coming Soon</title>
+    <style>
+      :root {
+        --primary-dark: #010d26;
+        --primary-blue: #0388a6;
+        --primary-teal: #04bfbf;
+        --accent-mint: #04d9c4;
+        --light-gray: #f2f2f2;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/waitlistAssets/images/bg-cm.avif");
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px);
+        transform: scale(1.1);
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        margin-bottom: 2rem;
+        opacity: 0;
+        height: 40px;
+        position: fixed;
+        top: 7%;
+        right: 8%;
+        animation: fadeInUp 1s ease-out 0.2s forwards;
+      }
+
+      .logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .main-headline {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.4s forwards;
+      }
+
+      .typing-cursor {
+        display: inline-block;
+        width: 3px;
+        height: 1em;
+        background-color: var(--accent-mint);
+        margin-left: 5px;
+        animation: blink 1s infinite;
+      }
+
+      .subtext {
+        font-size: 1.4rem;
+        color: var(--light-gray);
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.6s forwards;
+      }
+
+      .cta-container {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.8s forwards;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--accent-mint)
+        );
+        color: white;
+        box-shadow: 0 8px 32px rgba(4, 217, 196, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(4, 217, 196, 0.4);
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .progress-indicator {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 1s forwards;
+      }
+
+      .gear-icon {
+        width: 24px;
+        height: 24px;
+        color: var(--accent-mint);
+        animation: spin 3s linear infinite;
+      }
+
+      .progress-text {
+        color: var(--light-gray);
+        font-size: 1rem;
+      }
+
+      .dots {
+        display: inline-block;
+      }
+
+      .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--accent-mint);
+        margin: 0 2px;
+        animation: pulse 1.5s infinite;
+      }
+
+      .dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .main-headline {
+          font-size: 2.5rem;
+        }
+
+        .logo h1 {
+          font-size: 2rem;
+        }
+
+        .subtext {
+          font-size: 1.2rem;
+        }
+
+        .cta-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 300px;
+          padding: 1rem 2rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-headline {
+          font-size: 2rem;
+        }
+
+        .logo h1 {
+          font-size: 1.8rem;
+        }
+
+        .subtext {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <div class="container">
+      <div class="logo">
+        <img src="/waitlistAssets/images/logo 1.png" alt="">
+      </div>
+
+      <h2 class="main-headline">
+        <span id="typewriter">Something Awesome Is Coming</span
+        ><span class="typing-cursor"></span>
+      </h2>
+
+      <p class="subtext">
+        Our developers are crafting the next big thing in verification.<br />
+        We're building trust, one line of code at a time — hang tight, it's
+        worth the wait.
+      </p>
+
+      <div class="cta-container">
+        <a href="#" class="btn btn-primary" onclick="joinWaitlist()"
+          >Join the Waitlist</a
+        >
+        <a href="#" class="btn btn-secondary" onclick="goHome()"
+          >Back to Homepage</a
+        >
+      </div>
+
+      <div class="progress-indicator">
+        <svg class="gear-icon" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <span class="progress-text">Building something special</span>
+        <div class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Typewriter effect
+      const typewriterText = "Something Awesome Is Coming";
+      const typewriterElement = document.getElementById("typewriter");
+      let i = 0;
+
+      function typeWriter() {
+        if (i < typewriterText.length) {
+          typewriterElement.textContent = typewriterText.substring(0, i + 1);
+          i++;
+          setTimeout(typeWriter, 100);
+        }
+      }
+
+      // Start typewriter effect after initial animation
+      setTimeout(typeWriter, 800);
+
+      // Button interactions
+      function joinWaitlist() {
+        window.location.href = "/join";
+      }
+
+      function goHome() {
+        // Redirect to /home
+        window.location.href = "/home";
+      }
+
+      // Add some interactive particles on click
+      document.addEventListener("click", function (e) {
+        createParticle(e.clientX, e.clientY);
+      });
+
+      function createParticle(x, y) {
+        const particle = document.createElement("div");
+        particle.style.position = "fixed";
+        particle.style.left = x + "px";
+        particle.style.top = y + "px";
+        particle.style.width = "6px";
+        particle.style.height = "6px";
+        particle.style.background = "var(--accent-mint)";
+        particle.style.borderRadius = "50%";
+        particle.style.pointerEvents = "none";
+        particle.style.zIndex = "1000";
+        particle.style.animation = "particleFade 1s ease-out forwards";
+        document.body.appendChild(particle);
+
+        setTimeout(() => {
+          particle.remove();
+        }, 1000);
+      }
+
+      // Add particle animation
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes particleFade {
+                0% {
+                    opacity: 1;
+                    transform: scale(1) translateY(0);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0.5) translateY(-50px);
+                }
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

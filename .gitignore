@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# SEED FILES
+seedguys.js
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
+
+# Build output
+dist/
+build/
+tmp/
+temp/
+
+# Coverage reports
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional: PM2 process files
+.pids/
+*.pm2.log
+
+# Optional: if using Prisma or similar tools
+prisma/dev.db
+prisma/*.sqlite
+
+# Optional: if you're using eslint/prettier cache
+.eslintcache

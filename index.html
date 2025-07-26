@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkamo - Join the Revolution</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/waitlistAssets/css/main-v1.css" />
+  </head>
+  <body class="montserrat">
+    <div class="intro" id="intro">
+      <!-- Animated Background -->
+      <div class="bg-animation"></div>
+
+      <!-- Navigation -->
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <img src="/waitlistAssets/images/LOGO 4.png" alt="logo" /> Checkamo
+          </div>
+          <ul class="nav-menu">
+            <li><a href="#hit" class="nav-link">How it works</a></li>
+            <li><a href="/coming-soon" class="nav-link">Explore platform</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+            <li><a href="/join" class="cta-button">Join Waitlist</a></li>
+          </ul>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <a href="#hit" class="mobile-menu-item">How it works</a>
+        <a href="/coming-soon" class="mobile-menu-item">Explore platform</a>
+        <a href="#faq" class="mobile-menu-item">FAQ</a>
+        <a
+          href="/join"
+          class="mobile-menu-item primary-cta"
+          style="margin-top: 40px; text-align: center"
+          >Join Waitlist
+          <i class="fas fa-arrow-right" style="margin-left: 10px"></i
+        ></a>
+      </div>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <!-- Floating Elements -->
+        <div class="floating-element float-1"></div>
+        <div class="floating-element float-2"></div>
+        <div class="floating-element float-3"></div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Don't Guess,
+            <div class="gradient-text">
+              <span class="dynamic-text" id="typewriter">Check am oo</span>
+              <span class="typewriter-cursor"></span>
+            </div>
+          </h1>
+          <p class="hero-subtitle">
+            #1 platform to verify products, properties, and people before you
+            commit.
+          </p>
+          <div class="hero-cta">
+            <a href="/join" class="primary-cta">
+              Join Waitlist
+              <i class="fas fa-arrow-right" style="margin-left: 10px"></i>
+            </a>
+            <a href="/coming-soon" class="secondary-cta">
+              Explore platform
+              <i class="fas fa-play" style="margin-left: 10px"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <a href="#smarter" class="a-none">
+            <i class="fas fa-chevron-down"></i>
+            <div>Scroll to explore</div></a
+          >
+        </div>
+      </section>
+
+      <!-- //SMARTER STYLES -->
+      <section id="smarter" class="smarter">
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="geometric-shape"></div>
+          <div class="geometric-shape"></div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 class="tagline">
+              <span class="white">Scammers are getting smarter. </span>
+              So are we.
+            </h2>
+            <p class="subtitle">
+              Real stories from real people who needed Checkamo's protection
+            </p>
+          </div>
+
+          <div class="carousel-container">
+            <!-- Navigation Buttons -->
+            <div class="swiper-navigation">
+              <div class="nav-btn swiper-button-prev-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+              </div>
+              <div class="nav-btn swiper-button-next-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper complaints-swiper">
+              <div class="swiper-wrapper">
+                <!-- Complaint 1 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">AM</div>
+                        <div class="user-details">
+                          <h4>Adaeze Momoh</h4>
+                          <span>Lagos, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Property Rental</div>
+                    </div>
+                    <div class="complaint-text">
+                      "I paid ₦2.5M agent fee for a 4-bedroom duplex in Lekki.
+                      After 3 months of promises, I discovered the property was
+                      already occupied by another family. The agent disappeared
+                      with my money and blocked all contacts."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦2,500,000 lost</div>
+                      <div class="complaint-date">Oct 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 2 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">EO</div>
+                        <div class="user-details">
+                          <h4>Emeka Okafor</h4>
+                          <span>Abuja, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Land Purchase</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Bought a plot of land in Gwarinpa for ₦8M. Had documents,
+                      survey plans, everything looked legitimate. Found out
+                      later it was government land when they came to demolish my
+                      foundation. The seller vanished."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦8,000,000 lost</div>
+                      <div class="complaint-date">Sep 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 3 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">FI</div>
+                        <div class="user-details">
+                          <h4>Funmi Ibrahim</h4>
+                          <span>Ibadan, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Car Purchase</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Bought a 2018 Toyota Camry for ₦12M from a car dealer.
+                      The engine developed serious issues after 2 weeks.
+                      Discovered it was accident-damaged and poorly repaired.
+                      The 'certified' inspection report was fake."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦12,000,000 lost</div>
+                      <div class="complaint-date">Nov 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 4 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">TA</div>
+                        <div class="user-details">
+                          <h4>Tunde Adebayo</h4>
+                          <span>Port Harcourt, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Commercial Space</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Paid ₦6M for a shop in a new plaza. Agent showed me
+                      beautiful pictures and site visit. When I went to start
+                      business, the plaza was still under construction with no
+                      completion date in sight."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦6,000,000 lost</div>
+                      <div class="complaint-date">Dec 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 5 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">BN</div>
+                        <div class="user-details">
+                          <h4>Blessing Nwosu</h4>
+                          <span>Enugu, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Apartment Rental</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Transferred ₦1.8M for a luxury 2-bedroom apartment. The
+                      landlord kept giving excuses for 2 months. Later found out
+                      he doesn't own the property and had collected money from 5
+                      other people for the same apartment."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦1,800,000 lost</div>
+                      <div class="complaint-date">Jan 2025</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 6 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">JA</div>
+                        <div class="user-details">
+                          <h4>James Adamu</h4>
+                          <span>Kano, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Electronics Purchase</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Bought high-end electronics worth ₦3.2M for my new office
+                      through an online dealer. Products arrived but they were
+                      all fake Chinese replicas. The supposed warranty was
+                      worthless, dealer unreachable."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦3,200,000 lost</div>
+                      <div class="complaint-date">Oct 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 7 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">RO</div>
+                        <div class="user-details">
+                          <h4>Ruth Ogbonna</h4>
+                          <span>Owerri, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">House Purchase</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Paid ₦25M for a 5-bedroom house. All documents looked
+                      authentic, even did bank verification. Moved in only to
+                      discover there were 3 other 'Certificate of Occupancy'
+                      holders. Now in court battle for 2 years."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦25,000,000 lost</div>
+                      <div class="complaint-date">Aug 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 8 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">KM</div>
+                        <div class="user-details">
+                          <h4>Kemi Martins</h4>
+                          <span>Abeokuta, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Machinery Purchase</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Bought industrial bakery equipment for ₦15M from a
+                      supposed manufacturer. Equipment arrived faulty and when I
+                      demanded replacement, discovered the company was fake with
+                      rented office space."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦15,000,000 lost</div>
+                      <div class="complaint-date">Nov 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 9 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">DA</div>
+                        <div class="user-details">
+                          <h4>Daniel Akpan</h4>
+                          <span>Uyo, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Land Investment</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Invested ₦20M in what was supposed to be prime commercial
+                      land near the new airport. After payment, discovered the
+                      land was in a flood-prone area with no development permit
+                      possibility."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦20,000,000 lost</div>
+                      <div class="complaint-date">Sep 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Complaint 10 -->
+                <div class="swiper-slide">
+                  <div class="complaint-card">
+                    <div class="complaint-header">
+                      <div class="user-info">
+                        <div class="user-avatar">SO</div>
+                        <div class="user-details">
+                          <h4>Sarah Okonkwo</h4>
+                          <span>Calabar, Nigeria</span>
+                        </div>
+                      </div>
+                      <div class="complaint-type">Business Space</div>
+                    </div>
+                    <div class="complaint-text">
+                      "Rented a restaurant space for ₦4.5M annual rent. Set up
+                      completely, then landlord claimed he never received
+                      payment and demanded I leave. The agent I paid had forged
+                      the landlord's signature and disappeared."
+                    </div>
+                    <div class="complaint-footer">
+                      <div class="loss-amount">₦4,500,000 lost</div>
+                      <div class="complaint-date">Dec 2024</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="how-it-works" id="hit">
+        <div class="section-title">
+          <h2><span class="white">How It Works</span></h2>
+          <p class="subtitle">
+            Four simple steps to verify anything before you commit. No more
+            scams, no more regrets.
+          </p>
+        </div>
+        <div class="steps-container">
+          <div class="floating-particles"></div>
+          <div class="progress-line">
+            <div class="progress-fill"></div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="step">
+            <div class="step-content">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Tell us what you want verified</h3>
+              <p class="step-description">
+                Submit your verification request with all necessary details.
+                Whether it's a property rental, goods purchase, or service
+                verification, provide us with the specifics and location. Our
+                intelligent system matches your needs with the perfect verifier.
+              </p>
+            </div>
+            <div class="step-visual bg-st-1">
+              <div class="visual-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="color: white"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <polyline points="14,2 14,8 20,8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10,9 9,9 8,9" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step">
+            <div class="step-content">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Pick from trusted verifiers</h3>
+              <p class="step-description">
+                Browse our curated network of vetted, local verifiers. Each
+                verifier is thoroughly screened, reviewed, and rated by the
+                community. Choose based on proximity, expertise, ratings, and
+                pricing that fits your budget.
+              </p>
+            </div>
+            <div class="step-visual bg-st-2">
+              <div class="visual-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="color: white"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step">
+            <div class="step-content">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Receive photos, videos & voice notes</h3>
+              <p class="step-description">
+                Get comprehensive multimedia verification delivered directly to
+                your dashboard. Our verifiers provide high-quality photos,
+                detailed videos, and informative voice notes that give you
+                complete confidence in your decision.
+              </p>
+            </div>
+            <div class="step-visual bg-st-3">
+              <div class="visual-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="color: white"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21,15 16,10 5,21" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step">
+            <div class="step-content">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Confirm or request more</h3>
+              <p class="step-description">
+                Review the verification and approve if satisfied, or request
+                additional information if needed. Show appreciation for
+                exceptional service by tipping your verifier. Your peace of mind
+                is our priority.
+              </p>
+            </div>
+            <div class="step-visual bg-st-4">
+              <div class="visual-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="color: white"
+                >
+                  <polyline points="20,6 9,17 4,12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="industries">
+        <div class="loading" id="loading">
+          <div class="loading-spinner"></div>
+        </div>
+
+        <div class="industries-section">
+          <div class="section-title">
+            <h2><span class="white">Industries We Serve</span></h2>
+            <p>
+              Protecting every corner of society where people need verification
+            </p>
+          </div>
+
+          <div class="globe-container">
+            <canvas id="globe-canvas"></canvas>
+            <div class="particles" id="particles"></div>
+
+            <div class="mobile-grid" id="mobile-grid" style="display: none">
+              <!-- Mobile cards will be populated here via js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="volunteer-section">
+        <div class="floating-arrow">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <div class="content-container">
+          <span class="emoji-icon">
+            <img src="/waitlistAssets/images/star.png" alt="star.png">
+          </span>
+
+          <h1 class="main-headline"><span class="white">Join the Movement</span></h1>
+
+          <p class="subtitle">
+            Be part of something greater. Help us build a safer, scam-free world
+            by volunteering your time, skills, or voice. Together, we can
+            protect people from fraud and restore trust in the system.
+          </p>
+
+          <a href="#volunteer-form" class="cta-button ju">
+            Become a Volunteer
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+          <div class="v-bottom">
+            <div class="stats-container">
+              <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">People Protected</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Scams Prevented</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">Active Volunteers</span>
+              </div>
+            </div>
+
+            <div class="impact-badges">
+              <div class="badge"> Fraud Prevention</div>
+              <div class="badge">Community Building</div>
+              <div class="badge">Awareness Campaigns</div>
+              <div class="badge"> Verification Support</div>
+            </div>
+          </div>
+      </section>
+
+      <section class="verifier-section">
+        <!-- Floating Icons -->
+        <div class="floating-icon" style="top: 15%; left: 10%;">🛡️</div>
+        <div class="floating-icon" style="top: 25%; right: 15%;">👁️</div>
+        <div class="floating-icon" style="bottom: 30%; left: 8%;">✓</div>
+        <div class="floating-icon" style="bottom: 20%; right: 12%;">🔍</div>
+
+        <div class="container">
+            <div class="verifier-content">
+                <div class="content-left">
+                    <h1 class="headline">Changing the World with Better Verification</h1>
+                    <p class="subheadline">
+                      From rental properties to goods, services, and even people — we verify it all. Whether it’s a freelancer, vendor, or discreet companionship, Checkamo ensures what you see is what you get.
+                      <br><br>
+                        <strong>Want to help build a scam-free future?</strong>
+                    </p>
+                    <a href="/join" class="cta-button">Become a Verifier →</a>
+                </div>
+                
+                <div class="content-right">
+                    <div class="verification-image">
+                        <div class="verified-badge">✓ Verified</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    <!-- FAQ -->
+      <section id="faq" class="faq-section">
+        <!-- Background Decorations -->
+        <div class="bg-decoration bg-question">❓</div>
+        <div class="bg-decoration bg-lightbulb">💡</div>
+        <div class="bg-decoration bg-magnify">🔍</div>
+
+        <div class="container">
+            <h2 class="faq-title">🙋 Frequently Asked, Clearly Answered</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I become a verifier?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can sign up and take a quick onboarding test. Once verified, you can help others for a reward or free. The process is simple and takes just a few minutes to get started.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I trust Checkamo verifiers?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        All verifiers are pre-vetted, rated, and monitored. You're always in safe hands. Our community-driven rating system ensures quality and reliability.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this service free?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Some checks are free, others may attract small service fees, especially for remote verifications. We believe in making verification accessible to everyone.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What industries are covered?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Real estate, gigs, logistics, goods, and even companionship services — we're growing daily. Our platform adapts to serve various verification needs across multiple sectors.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I become a verifier?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can sign up and take a quick onboarding test. Once verified, you can help others for a reward or free. The process is simple and takes just a few minutes to get started.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I trust Checkamo verifiers?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        All verifiers are pre-vetted, rated, and monitored. You're always in safe hands. Our community-driven rating system ensures quality and reliability.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this service free?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Some checks are free, others may attract small service fees, especially for remote verifications. We believe in making verification accessible to everyone.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What industries are covered?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Real estate, gigs, logistics, goods, and even companionship services — we're growing daily. Our platform adapts to serve various verification needs across multiple sectors.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I become a verifier?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can sign up and take a quick onboarding test. Once verified, you can help others for a reward or free. The process is simple and takes just a few minutes to get started.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I trust Checkamo verifiers?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        All verifiers are pre-vetted, rated, and monitored. You're always in safe hands. Our community-driven rating system ensures quality and reliability.
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+          <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Column 1: Mini Company Details -->
+            <div class="footer-column company-column">
+                <div class="logo montserrat"><img src="/waitlistAssets/images/LOGO 4.png" alt="logo" /> Checkamo</div>
+                <p class="company-description montserrat">
+                    Checkamo is on a mission to protect individuals from fraud by verifying people, products, and properties before money is exchanged. Your trust is our priority.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: The Company -->
+            <div class="footer-column">
+                <h3>The Company</h3>
+                <ul class="footer-links">
+                    <li><a href="/coming-soon">About Us</a></li>
+                    <li><a href="/coming-soon">Blog</a></li>
+                    <li><a href="/coming-soon">Contact Us</a></li>
+                    <li><a href="/coming-soon">Help Center</a></li>
+                    <li><a href="/coming-soon">Careers</a></li>
+                    <li><a href="/coming-soon">Press & Media</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: For Users -->
+            <div class="footer-column">
+                <h3>For Users</h3>
+                <ul class="footer-links">
+                    <li><a href="/coming-soon">Become a Verifier</a></li>
+                    <li><a href="/coming-soon">Submit a Complaint</a></li>
+                    <li><a href="/coming-soon">Request a Check</a></li>
+                    <li><a href="/coming-soon">Find a Verified Agent</a></li>
+                    <li><a href="/coming-soon">Partner With Us</a></li>
+                    <li><a href="/coming-soon">Refer a Friend</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Legal -->
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="/coming-soon">Terms of Service</a></li>
+                    <li><a href="/coming-soon">Legal Counsel</a></li>
+                    <li><a href="/coming-soon">Data Privacy Policy</a></li>
+                    <li><a href="/coming-soon">Cookie Policy</a></li>
+                    <li><a href="/coming-soon">Community Guidelines</a></li>
+                    <li><a href="/coming-soon">Report Abuse</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sub-footer -->
+        <div class="sub-footer">
+            <div class="copyright">
+                © 2025 Checkamo. All rights reserved.
+            </div>
+            <div class="sub-footer-links">
+                <a href="/coming-soon">Terms of Use</a>
+                <a href="/coming-soon">Privacy Policy</a>
+                <a href="/coming-soon">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- //SWIPERJS SCRIPT CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="/waitlistAssets/js/main.js"></script>
+  </body>
+</html>
