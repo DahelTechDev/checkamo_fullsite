@@ -95,7 +95,7 @@ const ctaButtons = document.querySelectorAll(
 );
 ctaButtons.forEach((button) => {
   button.addEventListener("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // prevent immediate redirect
 
     const ripple = document.createElement("span");
     const rect = this.getBoundingClientRect();
@@ -104,25 +104,33 @@ ctaButtons.forEach((button) => {
     const y = e.clientY - rect.top - size / 2;
 
     ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s linear;
-                    pointer-events: none;
-                `;
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      left: ${x}px;
+      top: ${y}px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    `;
 
     this.appendChild(ripple);
 
+    // Remove ripple and redirect after animation
     setTimeout(() => {
       ripple.remove();
-    }, 600);
+
+      // Redirect to the href of the button (anchor tag)
+      const href = this.getAttribute("href");
+      if (href) {
+        window.location.href = href;
+      }
+    }, 600); // same as ripple duration
   });
 });
+
 
 // Add ripple animation CSS
 const style = document.createElement("style");

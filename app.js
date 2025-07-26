@@ -38,17 +38,17 @@ app.get('/coming-soon', (req, res) => {
   res.sendFile(path.join(__dirname, 'coming_soon.html'));
 });
 
-app.get('/adm', (req, res) => {
+app.get('/11199830083/adm', (req, res) => {
   res.sendFile(path.join(__dirname, 'waitlist-admin.html'));
 });
 
 // 404 handler
-// app.use('*', (req, res) => {
-//   res.status(404).json({
-//     success: false,
-//     message: 'Route not found'
-//   });
-// });
+app.use(['/:custom', '/:custom/:custom'], (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Route not found'
+  });
+});
 
 // Error handling middleware
 app.use((error, req, res, next) => {

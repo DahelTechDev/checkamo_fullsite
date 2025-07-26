@@ -17,6 +17,8 @@ router.get('/:id', waitlistController.getWaitlistEntryById);
 
 // GET /api/waitlist/email/:email - Get waitlist entry by email
 router.get('/email/:email', waitlistController.getWaitlistEntryByEmail);
+// DELETE /api/waitlist/email/:email - Get waitlist entry by email
+router.delete('/delete/:email', waitlistController.getWaitlistEntryByEmail);
 
 
 module.exports = router;
