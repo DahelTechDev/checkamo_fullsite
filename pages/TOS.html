@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkamo - Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #4CAF50;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .date-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .date-info p {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .intro {
+            background: #f0f8f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #e8f5e8;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #4CAF50;
+        }
+
+        .section-content {
+            padding-left: 0;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .service-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .service-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .responsibility-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibility-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .responsibility-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            border: 2px solid #4CAF50;
+        }
+
+        .contact-info h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .footer p {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Checkamo</div>
+            <div class="subtitle">Terms of Service</div>
+        </div>
+
+        <div class="date-info">
+            <p><strong>Effective Date:</strong> 22nd July, 2025</p>
+            <p><strong>Last Updated:</strong> 22nd July, 2025</p>
+        </div>
+
+        <div class="intro">
+            <p>Welcome to Checkamo. Checkamo is a platform that helps individuals and businesses verify products, properties, and people before completing transactions. By accessing or using our website, mobile application, or services (the "Platform"), you agree to the following Terms of Service ("Terms").</p>
+            
+            <div class="warning">
+                If you do not agree to these Terms, do not use our platform.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">1. Eligibility</h2>
+            <div class="section-content">
+                <p>You must be at least 18 years old and capable of entering into legally binding contracts. By using Checkamo, you represent and warrant that you meet these requirements.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">2. Our Services</h2>
+            <div class="section-content">
+                <p>Checkamo provides a peer-powered, AI-assisted verification ecosystem, including:</p>
+                <div class="service-list">
+                    <ul>
+                        <li>User Requests for product, property, or person verification</li>
+                        <li>Verifier Services (local middlemen/agents performing checks)</li>
+                        <li>Real-time data & media uploads (photos, videos, voice notes)</li>
+                        <li>Referral and reward system</li>
+                        <li>VIP and premium access tiers</li>
+                        <li>AI-powered fraud detection and alerts</li>
+                    </ul>
+                </div>
+                <p>We reserve the right to modify or discontinue services at any time.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">3. User Responsibilities</h2>
+            <div class="section-content">
+                <p>You agree to:</p>
+                <div class="responsibility-list">
+                    <ul>
+                        <li>Provide accurate, current, and complete information</li>
+                        <li>Use the platform only for lawful and ethical purposes</li>
+                        <li>Not impersonate another person or misrepresent your identity</li>
+                        <li>Not misuse verifications for illegal, exploitative, or malicious purposes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">4. Verifier Conduct</h2>
+            <div class="section-content">
+                <p>If you register as a Verifier, you agree to:</p>
+                <div class="responsibility-list">
+                    <ul>
+                        <li>Verify only what you can truthfully and safely assess</li>
+                        <li>Use real-time location and authentic media uploads</li>
+                        <li>Follow all Checkamo guidelines and local laws</li>
+                        <li>Accept that verifications may be moderated, rated, or reviewed</li>
+                        <li>Understand that repeated misuse or false reports may lead to permanent removal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">5. Discreet Services</h2>
+            <div class="section-content">
+                <div class="highlight-box">
+                    <p>For sensitive clients (e.g., sex workers, whistleblowers), Checkamo provides discreet verification with limited media exposure. We respect confidentiality, but we cannot guarantee anonymity from legal authorities in cases where abuse is reported or suspected.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">6. Fees and Payments</h2>
+            <div class="section-content">
+                <div class="responsibility-list">
+                    <ul>
+                        <li>Some features are free (e.g., browsing, requesting verification)</li>
+                        <li>Premium content and videos may require coins or a paid subscription</li>
+                        <li>Verifiers may earn coins or money based on completed and rated verifications</li>
+                        <li>We reserve the right to change pricing or reward structure with notice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">7. Content Ownership & Licensing</h2>
+            <div class="section-content">
+                <p>You retain ownership of any content (photos, videos, text) you upload. However, by using Checkamo, you grant us a non-exclusive, royalty-free license to use, display, reproduce, and adapt your content for platform-related purposes.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">8. Privacy Policy</h2>
+            <div class="section-content">
+                <p>Your data is important to us. Please read our [Privacy Policy] to understand how we collect, use, and protect your personal information. By agreeing to these Terms, you also agree to the terms of our Privacy Policy.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">9. Termination</h2>
+            <div class="section-content">
+                <p>We reserve the right to suspend or terminate any account that violates these Terms, engages in suspicious activity, or poses risk to the safety of the platform and its users.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">10. Disclaimers</h2>
+            <div class="section-content">
+                <div class="responsibility-list">
+                    <ul>
+                        <li>Checkamo does not guarantee 100% accuracy of any verification result</li>
+                        <li>We are not liable for losses incurred from transactions done outside the platform</li>
+                        <li>All verifications are based on user-submitted or human-verifier media; users still require due diligence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">11. Limitation of Liability</h2>
+            <div class="section-content">
+                <p>To the fullest extent permitted by law, Checkamo shall not be liable for any indirect, incidental, punitive, or consequential damages arising out of or in connection with your use of the platform.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">12. Governing Law</h2>
+            <div class="section-content">
+                <p>These Terms are governed by the laws of the Federal Republic of Nigeria, without regard to conflict of law principles.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">13. Dispute Resolution</h2>
+            <div class="section-content">
+                <p>We encourage resolving disputes amicably. If necessary, unresolved issues may be escalated to binding arbitration or local courts in Nigeria.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">14. Contact Us</h2>
+            <div class="section-content">
+                <div class="contact-info">
+                    <h3>For questions or support, please contact:</h3>
+                    <div class="contact-item">customercheckamo@gmail.com</div>
+                    <div class="contact-item"> WhatsApp Support: [Coming Soon]</div>
+                    <div class="contact-item">HQ: Nigeria</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>By using Checkamo, you acknowledge that you have read, understood, and agreed to these Terms of Service.</p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()" id="backToTopBtn">↑</button>
+
+    <script>
+        // Back to top functionality
+        window.onscroll = function() {
+            const btn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.classList.add("visible");
+            } else {
+                btn.classList.remove("visible");
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

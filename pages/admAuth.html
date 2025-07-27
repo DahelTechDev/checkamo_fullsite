@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkamo Admin - Secure Login</title>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+    font-family: "Montserrat", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #e2e8f0;
+        position: relative;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      /* Animated background elements */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(148,163,184,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        animation: backgroundMove 20s linear infinite;
+      }
+
+      @keyframes backgroundMove {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(-100px, -100px);
+        }
+      }
+
+      .logo {
+        height: 6rem;
+        margin-bottom: 2rem;
+      }
+
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .shape {
+        position: absolute;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.1) 0%,
+          rgba(118, 75, 162, 0.1) 100%
+        );
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .shape:nth-child(1) {
+        width: 200px;
+        height: 200px;
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .shape:nth-child(2) {
+        width: 150px;
+        height: 150px;
+        top: 70%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+
+      .shape:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        left: 80%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
+      .login-container {
+        background: rgba(1, 1, 2, 0.8);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 24px;
+        padding: 3rem;
+        width: 100%;
+        max-width: 650px;
+        text-align: center;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 10;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+      }
+
+      .login-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6);
+      }
+
+      .form-group {
+        margin-bottom: 2rem;
+        text-align: left;
+      }
+
+      .form-label {
+        display: block;
+        color: #94a3b8;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .password-input-container {
+        position: relative;
+      }
+
+      .password-input {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        background: rgba(15, 23, 42, 0.7);
+        border: 2px solid rgba(148, 163, 184, 0.2);
+        border-radius: 12px;
+        color: #e2e8f0;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        outline: none;
+      }
+
+      .password-input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        background: rgba(15, 23, 42, 0.9);
+      }
+
+      .password-input::placeholder {
+        color: #64748b;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #94a3b8;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+
+      .toggle-password:hover {
+        color: #e2e8f0;
+      }
+
+      .login-btn {
+        width: 100%;
+        background: linear-gradient(135deg,#04bfbf 0%, #667eea 60%,  #04bfbf 100%);
+        border: none;
+        border-radius: 12px;
+        padding: 1rem 2rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .login-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+      }
+
+      .login-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .login-btn .btn-text {
+        transition: opacity 0.3s ease;
+      }
+
+      .login-btn .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s linear infinite;
+        opacity: 0;
+      }
+
+      .login-btn.loading .btn-text {
+        opacity: 0;
+      }
+
+      .login-btn.loading .loading-spinner {
+        opacity: 1;
+      }
+
+      @keyframes spin {
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      .error-message {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        border-radius: 8px;
+        padding: 1rem;
+        color: #fca5a5;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        display: none;
+        animation: shake 0.5s ease-in-out;
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        75% {
+          transform: translateX(5px);
+        }
+      }
+
+      .warning-message {
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-radius: 8px;
+        padding: 1rem;
+        color: #fbbf24;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        display: none;
+      }
+
+      .trials-info {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 8px;
+        font-size: 0.85rem;
+        color: #93c5fd;
+      }
+
+      .trials-count {
+        font-weight: 600;
+        color: #3b82f6;
+      }
+
+      .blocked-message {
+        background: rgba(239, 68, 68, 0.2);
+        border: 2px solid rgba(239, 68, 68, 0.4);
+        border-radius: 12px;
+        padding: 2rem;
+        color: #fca5a5;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 1rem;
+        display: none;
+      }
+
+      .blocked-message h3 {
+        color: #ef4444;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 480px) {
+        .login-container {
+          margin: 1rem;
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <div class="login-container">
+      <img class="logo" src="/waitlistAssets/images/LOGO 4.png" alt="logo" />
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="password" class="form-label">Admin Password</label>
+          <div class="password-input-container">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="password-input"
+              placeholder="Enter your admin password"
+              required
+              autocomplete="current-password"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePasswordVisibility()"
+            >
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn" id="loginBtn">
+          <span class="btn-text">Access Dashboard</span>
+          <div class="loading-spinner"></div>
+        </button>
+      </form>
+
+      <div id="errorMessage" class="error-message"></div>
+      <div id="warningMessage" class="warning-message"></div>
+      <div id="blockedMessage" class="blocked-message">
+        <h3>🚫 Access Blocked</h3>
+        <p>
+          You have exceeded the maximum number of login attempts (5). Please try
+          again later or contact your system administrator.
+        </p>
+      </div>
+
+      <div class="trials-info">
+        <p>
+          Login attempts: <span class="trials-count" id="trialsCount">0</span> /
+          5
+        </p>
+        <p>Secure authentication required for dashboard access</p>
+      </div>
+    </div>
+
+    <script>
+      // Configuration
+      const MAX_TRIALS = 5;
+      const API_ENDPOINT = "/api/waitlist/auth";
+      const TRIALS_KEY = "checkamo_admin_trials";
+
+      // Initialize page
+      document.addEventListener("DOMContentLoaded", function () {
+        checkTrialStatus();
+        setupEventListeners();
+      });
+
+      // Setup event listeners
+      function setupEventListeners() {
+        const form = document.getElementById("loginForm");
+        const passwordInput = document.getElementById("password");
+
+        form.addEventListener("submit", handleLogin);
+
+        // Focus password input on page load
+        passwordInput.focus();
+
+        // Clear error messages when user starts typing
+        passwordInput.addEventListener("input", function () {
+          hideMessages();
+        });
+
+        // Handle Enter key
+        passwordInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            handleLogin(e);
+          }
+        });
+      }
+
+      // Check trial status from localStorage
+      function checkTrialStatus() {
+        const trials = getTrialCount();
+        updateTrialDisplay(trials);
+
+        if (trials >= MAX_TRIALS) {
+          blockAccess();
+        }
+      }
+
+      // Get trial count from localStorage
+      function getTrialCount() {
+        const stored = localStorage.getItem(TRIALS_KEY);
+        return stored ? parseInt(stored, 10) : 0;
+      }
+
+      // Set trial count in localStorage
+      function setTrialCount(count) {
+        localStorage.setItem(TRIALS_KEY, count.toString());
+      }
+
+      // Update trial display
+      function updateTrialDisplay(count) {
+        document.getElementById("trialsCount").textContent = count;
+      }
+
+      // Handle login form submission
+      async function handleLogin(e) {
+        e.preventDefault();
+
+        const trials = getTrialCount();
+        if (trials >= MAX_TRIALS) {
+          blockAccess();
+          return;
+        }
+
+        const password = document.getElementById("password").value.trim();
+        if (!password) {
+          showError("Please enter your password");
+          return;
+        }
+
+        setLoadingState(true);
+        hideMessages();
+        try {
+          const response = await fetch(API_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ password }),
+          });
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const result = await response.json();
+
+          if (result.success && result.redirectUrl) {
+            // Success - reset trials and redirect
+            localStorage.removeItem(TRIALS_KEY);
+            showSuccess("Access granted! Redirecting...");
+
+            setTimeout(() => {
+              window.location.href = result.redirectUrl;
+            }, 1000);
+          } else {
+            // Failed login
+            handleFailedLogin(result.message || "Invalid password");
+          }
+        } catch (error) {
+          console.error("Login error:", error);
+
+          // Fallback for testing - you can remove this in production
+          if (password === "admin123") {
+            localStorage.removeItem(TRIALS_KEY);
+            showSuccess("Access granted! Redirecting...");
+            setTimeout(() => {
+              window.location.href = "admin-dashboard.html"; // Change to your dashboard URL
+            }, 1000);
+            return;
+          }
+
+          handleFailedLogin("Network error. Please try again.");
+        } finally {
+          setLoadingState(false);
+        }
+      }
+
+      // Handle failed login attempt
+      function handleFailedLogin(message) {
+        const currentTrials = getTrialCount() + 1;
+        setTrialCount(currentTrials);
+        updateTrialDisplay(currentTrials);
+
+        if (currentTrials >= MAX_TRIALS) {
+          blockAccess();
+        } else {
+          const remaining = MAX_TRIALS - currentTrials;
+          showError(
+            `${message}. ${remaining} attempt${
+              remaining !== 1 ? "s" : ""
+            } remaining.`
+          );
+
+          if (remaining <= 2) {
+            showWarning(
+              `⚠️ Warning: Only ${remaining} attempt${
+                remaining !== 1 ? "s" : ""
+              } left before access is blocked.`
+            );
+          }
+        }
+
+        // Clear password field
+        document.getElementById("password").value = "";
+      }
+
+      // Block access after max trials
+      function blockAccess() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("blockedMessage").style.display = "block";
+        hideMessages();
+      }
+
+      // Set loading state
+      function setLoadingState(loading) {
+        const btn = document.getElementById("loginBtn");
+        const passwordInput = document.getElementById("password");
+
+        btn.disabled = loading;
+        passwordInput.disabled = loading;
+
+        if (loading) {
+          btn.classList.add("loading");
+        } else {
+          btn.classList.remove("loading");
+        }
+      }
+
+      // Show error message
+      function showError(message) {
+        const errorEl = document.getElementById("errorMessage");
+        errorEl.textContent = message;
+        errorEl.style.display = "block";
+      }
+
+      // Show warning message
+      function showWarning(message) {
+        const warningEl = document.getElementById("warningMessage");
+        warningEl.textContent = message;
+        warningEl.style.display = "block";
+      }
+
+      // Show success message
+      function showSuccess(message) {
+        const errorEl = document.getElementById("errorMessage");
+        errorEl.style.background = "rgba(16, 185, 129, 0.1)";
+        errorEl.style.borderColor = "rgba(16, 185, 129, 0.3)";
+        errorEl.style.color = "#6ee7b7";
+        errorEl.textContent = message;
+        errorEl.style.display = "block";
+      }
+
+      // Hide all messages
+      function hideMessages() {
+        document.getElementById("errorMessage").style.display = "none";
+        document.getElementById("warningMessage").style.display = "none";
+      }
+
+      // Toggle password visibility
+      function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("password");
+        const toggleBtn = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleBtn.textContent = "🙈";
+        } else {
+          passwordInput.type = "password";
+          toggleBtn.textContent = "👁️";
+        }
+      }
+
+      // Reset trials (for development/testing - remove in production)
+      function resetTrials() {
+        localStorage.removeItem(TRIALS_KEY);
+        location.reload();
+      }
+
+      // Add keyboard shortcut for development (Ctrl+Shift+R to reset trials)
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && e.shiftKey && e.key === "R") {
+          resetTrials();
+        }
+      });
+    </script>
+  </body>
+</html>

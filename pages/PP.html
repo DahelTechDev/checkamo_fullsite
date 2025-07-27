@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkamo - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #4CAF50;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .date-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .date-info p {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .intro {
+            background: #f0f8f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #e8f5e8;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #4CAF50;
+        }
+
+        .section-content {
+            padding-left: 0;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .service-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .service-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .responsibility-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibility-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .responsibility-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .privacy-box {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #e53e3e;
+        }
+
+        .security-box {
+            background: #f7fafc;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #3182ce;
+        }
+
+        .subsection {
+            margin: 25px 0;
+        }
+
+        .subsection h4 {
+            color: #4CAF50;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .cookie-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .cookie-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            border: 2px solid #4CAF50;
+        }
+
+        .contact-info h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .footer p {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .data-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .data-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .data-category h5 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .data-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Checkamo</div>
+            <div class="subtitle">Privacy Policy</div>
+        </div>
+
+        <div class="date-info">
+            <p><strong>Effective Date:</strong> 22nd July, 2025</p>
+            <p><strong>Last Updated:</strong> 22nd July, 2025</p>
+        </div>
+
+        <div class="intro">
+            <p>At Checkamo, we care deeply about your privacy and are committed to protecting your personal information. This comprehensive Privacy Policy outlines how we collect, use, share, and protect your personal information when you use our platform ("Checkamo," "we," "our," or "us"), which includes our website, mobile application, and all related services.</p>
+            
+            <p>We believe in transparency and want you to understand exactly how your data is handled. This policy applies to all users, verifiers, and visitors of our platform, regardless of how you access or use our services.</p>
+            
+            <div class="privacy-box">
+                <p><strong>Your Privacy Matters:</strong> If you have any concerns or questions about this policy, please don't hesitate to reach out to us at customercheckamo@gmail.com. We're here to help and ensure your privacy is protected.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">1. Information We Collect</h2>
+            <div class="section-content">
+                <p>We collect various types of information to provide you with a safe, trusted, and personalized verification experience. Our data collection practices are designed to ensure platform security while respecting your privacy rights.</p>
+
+                <div class="subsection">
+                    <h4>a. Information You Provide Directly</h4>
+                    <p>When you create an account, request verifications, or interact with our platform, you voluntarily provide us with certain information:</p>
+                    
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>Account Information</h5>
+                            <p>Full name, email address, phone number, date of birth, language preferences, profile photo, password, and account verification documents (if required for enhanced security).</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Verification Requests</h5>
+                            <p>Details about what you're verifying (products, properties, or individuals), specific location information, purpose of verification, budget preferences, and any special instructions.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Verifier Content</h5>
+                            <p>Photos, videos, voice recordings, written comments, GPS coordinates, timestamps, and any additional documentation provided during verification processes.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Communication Data</h5>
+                            <p>Messages sent through our platform, support tickets, feedback forms, ratings, reviews, dispute information, and any correspondence with our customer service team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>b. Information We Collect Automatically</h4>
+                    <p>When you use our platform, we automatically collect certain technical and usage information:</p>
+                    
+                    <div class="service-list">
+                        <ul>
+                            <li><strong>Device Information:</strong> IP address, browser type and version, operating system, device identifiers, screen resolution, and hardware specifications</li>
+                            <li><strong>Usage Analytics:</strong> Pages visited, features used, time spent on platform, click patterns, search queries, and interaction data</li>
+                            <li><strong>Location Data:</strong> Real-time GPS coordinates (when permission granted), approximate location based on IP address, and location history for verifications</li>
+                            <li><strong>Performance Data:</strong> App crashes, error logs, loading times, and technical diagnostic information</li>
+                            <li><strong>Referral Information:</strong> Source of registration (referral links, advertising campaigns, social media), marketing campaign effectiveness data</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>c. Information from Third Parties</h4>
+                    <p>We may receive additional information about you from trusted third-party sources to enhance our services and verify your identity:</p>
+                    
+                    <div class="responsibility-list">
+                        <ul>
+                            <li>Social media platforms (if you choose to connect your accounts)</li>
+                            <li>Identity verification services for enhanced account security</li>
+                            <li>Payment processors for transaction-related information</li>
+                            <li>Analytics providers for aggregated demographic insights</li>
+                            <li>Fraud prevention services for security purposes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">2. How We Use Your Information</h2>
+            <div class="section-content">
+                <p>We use the information we collect for legitimate business purposes to provide, improve, and protect our services. Here's how we use your data:</p>
+
+                <div class="subsection">
+                    <h4>Core Platform Functions</h4>
+                    <div class="service-list">
+                        <ul>
+                            <li>Facilitate secure and trusted verification transactions between users and verifiers</li>
+                            <li>Match users with qualified and nearby verifiers based on location, expertise, and availability</li>
+                            <li>Process payments, manage coin-based rewards, and handle subscription services</li>
+                            <li>Display verification content including photos, videos, and location data to relevant parties</li>
+                            <li>Enable communication features between users, verifiers, and support staff</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Platform Enhancement & Personalization</h4>
+                    <div class="service-list">
+                        <ul>
+                            <li>Customize your experience based on preferences, usage patterns, and verification history</li>
+                            <li>Provide personalized recommendations for verifiers and services</li>
+                            <li>Analyze platform usage to improve features, performance, and user interface</li>
+                            <li>Develop new features and services based on user feedback and behavior</li>
+                            <li>Optimize our mobile and web applications for better performance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Safety & Security Measures</h4>
+                    <div class="security-box">
+                        <p><strong>Your safety is our priority.</strong> We use your information to:</p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>Detect and prevent fraudulent activities, scams, and platform abuse</li>
+                                <li>Verify user identities and maintain trusted community standards</li>
+                                <li>Monitor for suspicious behavior and potential security threats</li>
+                                <li>Investigate disputes and resolve conflicts between users</li>
+                                <li>Comply with legal requirements and cooperate with law enforcement when necessary</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Communication & Updates</h4>
+                    <p>We may use your contact information to send you important updates about:</p>
+                    <div class="responsibility-list">
+                        <ul>
+                            <li>Platform updates, new features, and service announcements</li>
+                            <li>Security alerts and account notifications</li>
+                            <li>Verification status updates and completion notifications</li>
+                            <li>Marketing communications (with your consent where required)</li>
+                            <li>Customer support responses and help documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Data Anonymization:</strong> We may use aggregated, anonymized data for analytics, research, marketing insights, and industry reports. This data cannot be used to identify you personally and helps us understand platform trends and user behavior patterns.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">3. How We Share Your Information</h2>
+            <div class="section-content">
+                <p>We respect your privacy and do not sell your personal data to third parties. We only share your information when necessary to provide our services, ensure platform safety, or comply with legal requirements.</p>
+
+                <div class="subsection">
+                    <h4>Service-Related Sharing</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>With Verifiers</h5>
+                            <p>When you request a verification service, we share necessary details including your request specifics, location information, and contact details to enable the verification process.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>With Users</h5>
+                            <p>If you are a verifier, users may see your profile information, verification history, ratings, and relevant credentials to make informed decisions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Third-Party Service Providers</h4>
+                    <p>We work with trusted partners who help us provide and improve our services:</p>
+                    <div class="service-list">
+                        <ul>
+                            <li><strong>Cloud Hosting:</strong> AWS, Google Cloud, or similar services for secure data storage and platform hosting</li>
+                            <li><strong>Payment Processing:</strong> Stripe, PayPal, or other payment providers for handling transactions</li>
+                            <li><strong>Communication Services:</strong> SendGrid, Twilio for email and SMS notifications</li>
+                            <li><strong>Analytics & Performance:</strong> Google Analytics, Firebase for usage insights and app performance</li>
+                            <li><strong>Customer Support:</strong> Help desk software and live chat services</li>
+                            <li><strong>Identity Verification:</strong> Third-party services for enhanced account security</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Legal and Safety Requirements</h4>
+                    <div class="privacy-box">
+                        <p>We may share your information when required by law or to protect platform safety:</p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>Legal compliance with court orders, subpoenas, or regulatory requirements</li>
+                                <li>Law enforcement cooperation in cases of suspected illegal activity</li>
+                                <li>Protection of user safety in cases of threats, harassment, or harm</li>
+                                <li>Prevention of fraud, abuse, or violations of our Terms of Service</li>
+                                <li>Business transfers (mergers, acquisitions) with appropriate data protection measures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="cookiess">
+            <h2 class="section-title">4. Cookies and Tracking Technologies</h2>
+            <div class="section-content">
+                <p>We use cookies and similar tracking technologies to enhance your experience, analyze platform usage, and provide personalized services. This section explains what cookies are, how we use them, and how you can control them.</p>
+
+                <div class="subsection">
+                    <h4>What Are Cookies?</h4>
+                    <p>Cookies are small text files stored on your device when you visit websites or use apps. They help us remember your preferences, keep you logged in, and provide a personalized experience. We use both session cookies (deleted when you close your browser) and persistent cookies (remain until they expire or you delete them).</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>Types of Cookies We Use</h4>
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie Type</th>
+                                <th>Purpose</th>
+                                <th>Duration</th>
+                                <th>Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Essential Cookies</strong></td>
+                                <td>Enable core platform functionality, authentication, and security features</td>
+                                <td>Session/30 days</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance Cookies</strong></td>
+                                <td>Analyze platform usage, identify errors, and improve performance</td>
+                                <td>90 days</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Functional Cookies</strong></td>
+                                <td>Remember your preferences, language settings, and customizations</td>
+                                <td>1 year</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analytics Cookies</strong></td>
+                                <td>Understand user behavior, popular features, and platform effectiveness</td>
+                                <td>2 years</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing Cookies</strong></td>
+                                <td>Deliver relevant advertisements and measure campaign effectiveness</td>
+                                <td>1 year</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h4>Third-Party Cookies</h4>
+                    <p>We may allow trusted third-party services to place cookies on your device for:</p>
+                    <div class="service-list">
+                        <ul>
+                            <li><strong>Google Analytics:</strong> Website traffic analysis and user behavior insights</li>
+                            <li><strong>Social Media Plugins:</strong> Social sharing functionality and login options</li>
+                            <li><strong>Payment Processors:</strong> Secure transaction processing and fraud prevention</li>
+                            <li><strong>Customer Support:</strong> Live chat functionality and help desk services</li>
+                            <li><strong>Advertising Partners:</strong> Relevant ad delivery and campaign measurement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Managing Your Cookie Preferences</h4>
+                    <div class="highlight-box">
+                        <p><strong>You're in control:</strong> You can manage cookies through several methods:</p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li><strong>Browser Settings:</strong> Most browsers allow you to view, delete, and block cookies</li>
+                                <li><strong>Cookie Preference Center:</strong> Access our cookie settings through your account preferences</li>
+                                <li><strong>Opt-Out Tools:</strong> Use third-party opt-out tools for advertising cookies</li>
+                                <li><strong>Mobile Settings:</strong> Adjust tracking preferences in your device settings</li>
+                            </ul>
+                        </div>
+                        <p><em>Please note: Disabling essential cookies may affect platform functionality and your ability to use certain features.</em></p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Other Tracking Technologies</h4>
+                    <p>In addition to cookies, we may use:</p>
+                    <div class="responsibility-list">
+                        <ul>
+                            <li><strong>Web Beacons:</strong> Small invisible images that help us understand email engagement</li>
+                            <li><strong>Local Storage:</strong> Browser storage for offline functionality and performance</li>
+                            <li><strong>Device Fingerprinting:</strong> Security measure to detect fraudulent activities</li>
+                            <li><strong>App Analytics:</strong> Mobile app usage tracking for performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="legal-counsel">
+            <h2 class="section-title">5. Your Privacy Rights and Choices</h2>
+            <div class="section-content">
+                <p>We believe you should have control over your personal information. Depending on your location, you may have various rights regarding your data. We respect these rights and provide easy ways to exercise them.</p>
+
+                <div class="subsection">
+                    <h4>Universal Rights (Available to All Users)</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>Access Your Data</h5>
+                            <p>Request a copy of all personal information we have about you, including account details, verification history, and communication records.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Correct Your Information</h5>
+                            <p>Update or correct inaccurate personal information through your account settings or by contacting our support team.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Delete Your Account</h5>
+                            <p>Request complete deletion of your account and associated personal data, subject to legal retention requirements.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Data Portability</h5>
+                            <p>Export your data in a machine-readable format to transfer to another service provider.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Enhanced Rights (GDPR, CCPA, and Similar Laws)</h4>
+                    <p>If you're located in regions with comprehensive privacy laws, you may have additional rights:</p>
+                    <div class="service-list">
+                        <ul>
+                            <li><strong>Right to Object:</strong> Object to certain types of data processing, including marketing communications</li>
+                            <li><strong>Right to Restrict:</strong> Limit how we process your information in specific circumstances</li>
+                            <li><strong>Withdraw Consent:</strong> Revoke previously given consent for optional data collection</li>
+                            <li><strong>Automated Decision-Making:</strong> Request human review of automated decisions that significantly affect you</li>
+                            <li><strong>Privacy Complaints:</strong> Lodge complaints with your local data protection authority</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>How to Exercise Your Rights</h4>
+                    <div class="highlight-box">
+                        <p><strong>Multiple Ways to Contact Us:</strong></p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>Email our privacy team directly: customercheckamo@gmail.com</li>
+                                <li>Use the in-app privacy settings and data request features</li>
+                                <li>Contact our customer support through the help center</li>
+                                <li>Submit requests through our website's privacy portal</li>
+                            </ul>
+                        </div>
+                        <p><em>We typically respond to privacy requests within 30 days and may require identity verification for security purposes.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="data-control">
+            <h2 class="section-title">6. Data Retention and Storage</h2>
+            <div class="section-content">
+                <p>We retain your personal information only as long as necessary to provide our services, comply with legal obligations, and protect our legitimate business interests.</p>
+
+                <div class="subsection">
+                    <h4>Retention Periods</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>Active Accounts</h5>
+                            <p>Personal data is retained while your account is active and for up to 2 years after account closure for customer service and dispute resolution purposes.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Verification Data</h5>
+                            <p>Photos, videos, and verification records are retained for 5 years to support dispute resolution and maintain platform integrity.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Financial Records</h5>
+                            <p>Transaction data and payment information are retained for 7 years to comply with financial regulations and tax requirements.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Communication Logs</h5>
+                            <p>Support conversations and platform messages are retained for 3 years for quality assurance and dispute resolution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Secure Data Storage</h4>
+                    <div class="security-box">
+                        <p><strong>Your data is protected with enterprise-grade security:</strong></p>
+                        <div class="service-list">
+                            <ul>
+                                <li>Encrypted storage using AES-256 encryption standards</li>
+                                <li>Secure cloud infrastructure with leading providers (AWS, Google Cloud)</li>
+                                <li>Regular security audits and penetration testing</li>
+                                <li>Restricted access controls and employee security training</li>
+                                <li>Automated backup systems and disaster recovery procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Data Deletion Process</h4>
+                    <p>When you request account deletion or data removal:</p>
+                    <div class="responsibility-list">
+                        <ul>
+                            <li>Personal information is anonymized or deleted within 30 days</li>
+                            <li>Verification content may be retained longer for platform integrity</li>
+                            <li>Some data may be retained for legal compliance (financial records, dispute resolution)</li>
+                            <li>Backup systems are purged according to our data retention schedule</li>
+                            <li>You'll receive confirmation once the deletion process is complete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">7. Data Security and Protection</h2>
+            <div class="section-content">
+                <p>Protecting your personal information is our top priority. We implement comprehensive security measures to safeguard your data against unauthorized access, alteration, disclosure, or destruction.</p>
+
+                <div class="subsection">
+                    <h4>Technical Security Measures</h4>
+                    <div class="security-box">
+                        <p><strong>Multi-layered Security Architecture:</strong></p>
+                        <div class="service-list">
+                            <ul>
+                                <li><strong>Encryption:</strong> End-to-end encryption for sensitive data transmission and AES-256 encryption for data at rest</li>
+                                <li><strong>Authentication:</strong> Multi-factor authentication options and secure password requirements</li>
+                                <li><strong>Network Security:</strong> Firewalls, intrusion detection systems, and secure VPN access for employees</li>
+                                <li><strong>Application Security:</strong> Regular code reviews, vulnerability assessments, and security testing</li>
+                                <li><strong>Infrastructure:</strong> Secure cloud hosting with industry-leading providers and compliance certifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Operational Security Practices</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>Access Controls</h5>
+                            <p>Strict role-based access controls ensure only authorized personnel can access user data, with all access logged and monitored.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Employee Training</h5>
+                            <p>Regular security awareness training for all staff members, including data handling best practices and incident response procedures.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Monitoring & Detection</h5>
+                            <p>24/7 security monitoring, automated threat detection, and incident response protocols to quickly address potential security issues.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Regular Audits</h5>
+                            <p>Periodic security audits, compliance assessments, and third-party security evaluations to maintain high security standards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Your Role in Security</h4>
+                    <div class="highlight-box">
+                        <p><strong>Security is a shared responsibility:</strong></p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>Use strong, unique passwords and enable two-factor authentication</li>
+                                <li>Keep your app updated to the latest version for security patches</li>
+                                <li>Don't share your login credentials or account access with others</li>
+                                <li>Report suspicious activities or security concerns immediately</li>
+                                <li>Be cautious when using public Wi-Fi for sensitive activities</li>
+                                <li>Log out of your account when using shared or public devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Security Incident Response</h4>
+                    <p>In the unlikely event of a security incident:</p>
+                    <div class="privacy-box">
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>We'll investigate and contain the incident within 24 hours</li>
+                                <li>Affected users will be notified within 72 hours of discovery</li>
+                                <li>We'll provide clear information about what happened and what we're doing</li>
+                                <li>Additional security measures will be implemented to prevent recurrence</li>
+                                <li>We'll cooperate with law enforcement and regulatory authorities as required</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">8. Children's Privacy and Safety</h2>
+            <div class="section-content">
+                <p>Checkamo is committed to protecting children's privacy and safety. Our platform is designed for adults and we do not knowingly collect personal information from individuals under 18 years of age.</p>
+
+                <div class="subsection">
+                    <h4>Age Restrictions</h4>
+                    <div class="privacy-box">
+                        <p><strong>18+ Platform:</strong> Checkamo requires all users to be at least 18 years old. This age restriction is in place because:</p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>Our services involve financial transactions and legal agreements</li>
+                                <li>Verification activities may involve adult content or sensitive situations</li>
+                                <li>We require users to have legal capacity to enter into binding contracts</li>
+                                <li>Platform interactions may not be suitable for minors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Protection Measures</h4>
+                    <div class="service-list">
+                        <ul>
+                            <li><strong>Age Verification:</strong> Account registration requires age confirmation and may include identity verification</li>
+                            <li><strong>Content Monitoring:</strong> Automated and human moderation to detect and remove inappropriate content</li>
+                            <li><strong>Reporting System:</strong> Easy reporting mechanisms for users to flag concerning behavior or content</li>
+                            <li><strong>Account Suspension:</strong> Immediate suspension of accounts found to belong to minors</li>
+                            <li><strong>Data Deletion:</strong> Prompt deletion of any data collected from users under 18</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>If We Discover Underage Users</h4>
+                    <p>If we become aware that we've collected personal information from someone under 18:</p>
+                    <div class="highlight-box">
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>The account will be immediately suspended and access terminated</li>
+                                <li>All personal information will be deleted from our systems within 30 days</li>
+                                <li>Parents or guardians will be notified if contact information is available</li>
+                                <li>We'll review our processes to prevent similar situations in the future</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Parental Concerns</h4>
+                    <p>If you're a parent or guardian and believe your child has created an account or provided personal information to Checkamo, please contact us immediately at customercheckamo@gmail.com. We take these situations seriously and will respond promptly to address your concerns.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">9. International Data Transfers</h2>
+            <div class="section-content">
+                <p>Checkamo operates globally and may transfer your personal information across international borders to provide our services effectively. We ensure appropriate safeguards are in place for all international data transfers.</p>
+
+                <div class="subsection">
+                    <h4>Why We Transfer Data</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>Global Platform Operations</h5>
+                            <p>Our platform serves users worldwide, requiring data processing in multiple countries for optimal performance and service delivery.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Cloud Infrastructure</h5>
+                            <p>We use leading cloud providers with data centers globally to ensure fast, reliable service and data redundancy.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Service Providers</h5>
+                            <p>Some of our trusted third-party service providers operate in different countries, requiring secure data sharing arrangements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Transfer Safeguards</h4>
+                    <div class="security-box">
+                        <p><strong>We protect your data during international transfers through:</strong></p>
+                        <div class="service-list">
+                            <ul>
+                                <li><strong>Adequacy Decisions:</strong> Transfers to countries recognized as having adequate data protection laws</li>
+                                <li><strong>Standard Contractual Clauses:</strong> Legal agreements ensuring data protection during transfers</li>
+                                <li><strong>Binding Corporate Rules:</strong> Internal policies governing data protection across our global operations</li>
+                                <li><strong>Certification Programs:</strong> Participation in recognized privacy frameworks and certification schemes</li>
+                                <li><strong>Encryption:</strong> All data is encrypted during transmission and storage, regardless of location</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Your Rights Regarding Transfers</h4>
+                    <p>You have the right to:</p>
+                    <div class="responsibility-list">
+                        <ul>
+                            <li>Request information about where your data is processed and stored</li>
+                            <li>Object to transfers in certain circumstances</li>
+                            <li>Request copies of safeguards in place for your data transfers</li>
+                            <li>File complaints with your local data protection authority</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">10. Changes to This Privacy Policy</h2>
+            <div class="section-content">
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We're committed to keeping you informed about any changes that affect your privacy rights.</p>
+
+                <div class="subsection">
+                    <h4>How We Handle Updates</h4>
+                    <div class="highlight-box">
+                        <p><strong>Our commitment to transparency:</strong></p>
+                        <div class="service-list">
+                            <ul>
+                                <li><strong>Clear Notification:</strong> We'll update the "Last Updated" date at the top of this policy</li>
+                                <li><strong>Email Alerts:</strong> Registered users will receive email notifications about significant changes</li>
+                                <li><strong>In-App Notifications:</strong> Important updates will be highlighted when you next use our platform</li>
+                                <li><strong>Review Period:</strong> You'll have at least 30 days to review changes before they take effect</li>
+                                <li><strong>Opt-Out Options:</strong> For material changes, you may have the option to opt out or close your account</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Types of Changes</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>Minor Updates</h5>
+                            <p>Clarifications, formatting improvements, or contact information updates that don't affect your rights or our data practices.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Significant Changes</h5>
+                            <p>Changes to data collection, use, sharing practices, or your privacy rights that require additional notice and consent.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Legal Requirements</h5>
+                            <p>Updates required by new laws, regulations, or legal decisions that may take effect immediately for compliance purposes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Your Options When We Update</h4>
+                    <p>When we make changes to this Privacy Policy, you can:</p>
+                    <div class="responsibility-list">
+                        <ul>
+                            <li>Continue using our services under the updated policy</li>
+                            <li>Contact us with questions or concerns about the changes</li>
+                            <li>Exercise your data rights, including account deletion if desired</li>
+                            <li>Adjust your privacy settings and preferences as needed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Version History</h4>
+                    <p>We maintain a history of significant policy changes. You can request information about previous versions of this policy by contacting our privacy team at customercheckamo@gmail.com.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">11. Contact Us and Support</h2>
+            <div class="section-content">
+                <p>We're here to help with any questions, concerns, or requests related to your privacy and data protection. Our privacy team is committed to providing timely, helpful responses to all inquiries.</p>
+
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item"><strong>Email:</strong> customercheckamo@gmail.com</div>
+                    <div class="contact-item"><strong>Website:</strong> https://checkamo.com</div>
+                    <div class="contact-item"><strong>App Support:</strong> Via the Help or Chat menu in your account</div>
+                    <div class="contact-item"> <strong>WhatsApp Support:</strong> Coming Soon</div>
+                    <div class="contact-item"> <strong>Headquarters:</strong> Nigeria</div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Response Times</h4>
+                    <div class="data-categories">
+                        <div class="data-category">
+                            <h5>General Inquiries</h5>
+                            <p>We typically respond to general privacy questions within 2-3 business days.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Data Requests</h5>
+                            <p>Privacy rights requests (access, deletion, etc.) are processed within 30 days as required by law.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Security Issues</h5>
+                            <p>Security-related concerns receive priority attention and are addressed within 24 hours.</p>
+                        </div>
+                        <div class="data-category">
+                            <h5>Urgent Matters</h5>
+                            <p>Urgent privacy or safety issues are escalated immediately for fastest possible resolution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>What to Include in Your Message</h4>
+                    <div class="highlight-box">
+                        <p><strong>Help us help you faster:</strong></p>
+                        <div class="responsibility-list">
+                            <ul>
+                                <li>Your registered email address or account identifier</li>
+                                <li>Clear description of your question, concern, or request</li>
+                                <li>Relevant dates, transaction IDs, or reference numbers</li>
+                                <li>Preferred method and language for our response</li>
+                                <li>Any supporting documentation (screenshots, error messages, etc.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h4>Data Protection Officer</h4>
+                    <p>For complex privacy matters or if you're not satisfied with our initial response, you can request to speak with our Data Protection Officer who specializes in privacy law and data protection compliance.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>Regulatory Contacts</h4>
+                    <p>If you believe we haven't adequately addressed your privacy concerns, you have the right to contact your local data protection authority. We're happy to provide guidance on how to reach the appropriate regulatory body in your jurisdiction.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>By using Checkamo, you acknowledge that you have read, understood, and agreed to this Privacy Policy and consent to the collection and use of your data as described above.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">This Privacy Policy is effective as of the date stated above and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()" id="backToTopBtn">↑</button>
+
+    <script>
+        // Back to top functionality
+        window.onscroll = function() {
+            const btn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.classList.add("visible");
+            } else {
+                btn.classList.remove("visible");
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight cookies section if accessed directly
+        if (window.location.hash === '#cookiess') {
+            setTimeout(() => {
+                const cookiesSection = document.getElementById('cookiess');
+                cookiesSection.style.backgroundColor = '#f0f8f0';
+                cookiesSection.style.padding = '25px';
+                cookiesSection.style.borderRadius = '8px';
+                cookiesSection.style.border = '2px solid #4CAF50';
+                setTimeout(() => {
+                    cookiesSection.style.transition = 'all 2s ease';
+                    cookiesSection.style.backgroundColor = 'transparent';
+                    cookiesSection.style.border = 'none';
+                    cookiesSection.style.padding = '0';
+                }, 3000);
+            }, 500);
+        }
+    </script>
+</body>
+</html>
