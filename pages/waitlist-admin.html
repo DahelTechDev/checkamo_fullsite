@@ -798,7 +798,7 @@
                     <td>
                         <div class="actions">
                             <button class="btn btn-small" onclick="event.stopPropagation(); showUserDetails(${JSON.stringify(user).replace(/"/g, '&quot;')})">View</button>
-                            <button class="btn btn-danger btn-small" onclick="event.stopPropagation(); confirmDelete('${user._id}')">Delete</button>
+                            <button class="btn btn-danger btn-small" onclick="event.stopPropagation(); confirmDelete('${user.email}')">Delete</button>
                         </div>
                     </td>
                 `;
@@ -970,7 +970,8 @@
         }
 
         // Confirm delete user
-        function confirmDelete(userId) {
+        function confirmDelete(userId) { 
+            //userId here = user email
             if (confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
                 deleteUserById(userId);
             }
@@ -979,7 +980,7 @@
         // Delete user by ID
         async function deleteUserById(userId) {
             try {
-                const response = await fetch(`${API_BASE_URL}/${userId}`, {
+                const response = await fetch(`${API_BASE_URL}/delete/${userId}`, {
                     method: 'DELETE'
                 });
 

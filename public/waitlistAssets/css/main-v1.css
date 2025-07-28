@@ -562,7 +562,7 @@ nav:hover {
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
-    left: 50%;
+    /* left: 50%; */
     transform: translateX(-50%);
     color: rgba(4, 217, 196, 0.8);
     font-size: 14px;

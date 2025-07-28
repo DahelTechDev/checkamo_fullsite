@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const jwt = require("jsonwebtoken");
 const waitlistController = require("../controllers/waitListController");
 
 const authMiddleware = require("../middlewares/admAuth");
@@ -27,7 +26,7 @@ router.get("/:id", authMiddleware, waitlistController.getWaitlistEntryById);
 // GET /api/waitlist/email/:email - Get waitlist entry by email
 router.get("/email/:email", authMiddleware, waitlistController.getWaitlistEntryByEmail);
 
-// DELETE /api/waitlist/email/:email - Get waitlist entry by email
-router.delete("/delete/:email", authMiddleware, waitlistController.getWaitlistEntryByEmail);
+// DELETE /api/waitlist/delete/:email - Get waitlist entry by email
+router.delete("/delete/:email", authMiddleware, waitlistController.deleteWaitlistEntry);
 
 module.exports = router;

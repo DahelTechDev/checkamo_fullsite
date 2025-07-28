@@ -1,4 +1,6 @@
-const Waitlist = require('../models/waitlistModel');
+const Waitlist = require("../models/waitlistModel");
+
+const jwt = require("jsonwebtoken");
 
 const admAccess = async (req, res) => {
   try {
@@ -6,7 +8,7 @@ const admAccess = async (req, res) => {
     const password = req.body.password;
     console.log(adm_pass, password, " do there match??");
     if (adm_pass.toString() !== password.toString()) {
-        // console.log("no match", adm_pass.toString() , password.toString())
+      // console.log("no match", adm_pass.toString() , password.toString())
       return res
         .status(400)
         .json({ success: false, message: "credential is incorrect!!" });
@@ -26,34 +28,50 @@ const admAccess = async (req, res) => {
         sameSite: "strict",
         maxAge: 3600000, // 1 hour
       })
-      .json({ success: true, message: "Login successful", redirectUrl: "/11199830083%22/adm" });
+      .json({
+        success: true,
+        message: "Login successful",
+        redirectUrl: "/11199830083%22/adm",
+      });
   } catch (error) {
-    console.log(error); 
+    console.log(error);
     res.status(500).json({ success: false, message: "An Error occured" });
   }
 };
 
-
 // Create a new waitlist entry
 const createWaitlistEntry = async (req, res) => {
-    console.log("accessed");
-    console.log(req.body);
+
   try {
     const data = req.body;
+
+    const user = await Waitlist.findOne({ email: data.email });
+    if (user) {
+      user.status = "approved";
+      await user.save();
+      return res.status(422).json({
+        success: false,
+        error: "already exist",
+        message: "Failed to join waitlist: user already in the waitlist",
+      });
+    }
 
     const processedData = {
       fullName: data.fullName,
       email: data.email,
       phone: data.phone,
       address: data.address,
-      interests: Array.isArray(data.interests) ? data.interests : [data.interests],
+      interests: Array.isArray(data.interests)
+        ? data.interests
+        : [data.interests],
       industry: data.industry,
       language: data.language,
+      status: "approved",
       wantToBeVerifier: data.wantToBeVerifier,
-      verifierLocations: []
+      verifierLocations: [],
     };
 
-    if (data.wantToBeVerifier === 'yes' && data.location) {
+    if (data.wantToBeVerifier === "yes" && data.location) {
       processedData.verifierLocations = Array.isArray(data.location)
         ? data.location
         : [data.location];
@@ -65,14 +83,14 @@ const createWaitlistEntry = async (req, res) => {
     res.status(201).json({
       success: true,
       data: savedEntry,
-      message: 'Successfully joined the waitlist!'
+      message: "Successfully joined the waitlist!",
     });
   } catch (error) {
     console.log(error);
     res.status(500).json({
       success: false,
       error: error.message,
-      message: 'Failed to join waitlist'
+      message: "Failed to join waitlist",
     });
   }
 };
@@ -88,11 +106,11 @@ const getAllWaitlistEntries = async (req, res) => {
     }
 
     if (filters.industry) {
-      query.industry = new RegExp(filters.industry, 'i');
+      query.industry = new RegExp(filters.industry, "i");
     }
 
     if (filters.language) {
-      query.language = new RegExp(filters.language, 'i');
+      query.language = new RegExp(filters.language, "i");
     }
 
     const entries = await Waitlist.find(query).sort({ createdAt: -1 });
@@ -101,13 +119,13 @@ const getAllWaitlistEntries = async (req, res) => {
       success: true,
       data: entries,
       count: entries.length,
-      message: 'Waitlist entries retrieved successfully'
+      message: "Waitlist entries retrieved successfully",
     });
   } catch (error) {
     res.status(500).json({
       success: false,
       error: error.message,
-      message: 'Failed to retrieve waitlist entries'
+      message: "Failed to retrieve waitlist entries",
     });
   }
 };
@@ -121,20 +139,20 @@ const getWaitlistEntryById = async (req, res) => {
     if (!entry) {
       return res.status(404).json({
         success: false,
-        message: 'Waitlist entry not found'
+        message: "Waitlist entry not found",
       });
     }
 
     res.status(200).json({
       success: true,
       data: entry,
-      message: 'Waitlist entry retrieved successfully'
+      message: "Waitlist entry retrieved successfully",
     });
   } catch (error) {
     res.status(500).json({
       success: false,
       error: error.message,
-      message: 'Failed to retrieve waitlist entry'
+      message: "Failed to retrieve waitlist entry",
     });
   }
 };
@@ -148,20 +166,20 @@ const getWaitlistEntryByEmail = async (req, res) => {
     if (!entry) {
       return res.status(404).json({
         success: false,
-        message: 'Waitlist entry not found'
+        message: "Waitlist entry not found",
       });
     }
 
     res.status(200).json({
       success: true,
       data: entry,
-      message: 'Waitlist entry retrieved successfully'
+      message: "Waitlist entry retrieved successfully",
     });
   } catch (error) {
     res.status(500).json({
       success: false,
       error: error.message,
-      message: 'Failed to retrieve waitlist entry'
+      message: "Failed to retrieve waitlist entry",
     });
   }
 };
@@ -170,17 +188,21 @@ const getWaitlistEntryByEmail = async (req, res) => {
 const getWaitlistStats = async (req, res) => {
   try {
     const totalEntries = await Waitlist.countDocuments();
-    const verifierCount = await Waitlist.countDocuments({ wantToBeVerifier: 'yes' });
-    const nonVerifierCount = await Waitlist.countDocuments({ wantToBeVerifier: 'no' });
+    const verifierCount = await Waitlist.countDocuments({
+      wantToBeVerifier: "yes",
+    });
+    const nonVerifierCount = await Waitlist.countDocuments({
+      wantToBeVerifier: "no",
+    });
 
     const industryStats = await Waitlist.aggregate([
-      { $group: { _id: '$industry', count: { $sum: 1 } } },
-      { $sort: { count: -1 } }
+      { $group: { _id: "$industry", count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
     ]);
 
     const languageStats = await Waitlist.aggregate([
-      { $group: { _id: '$language', count: { $sum: 1 } } },
-      { $sort: { count: -1 } }
+      { $group: { _id: "$language", count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
     ]);
 
     res.status(200).json({
@@ -189,25 +211,54 @@ const getWaitlistStats = async (req, res) => {
         totalEntries,
         verifierCount,
         nonVerifierCount,
-        industryBreakdown: industryStats, 
-        languageBreakdown: languageStats
+        industryBreakdown: industryStats,
+        languageBreakdown: languageStats,
       },
-      message: 'Waitlist statistics retrieved successfully'
+      message: "Waitlist statistics retrieved successfully",
     });
   } catch (error) {
     res.status(500).json({
       success: false,
       error: error.message,
-      message: 'Failed to retrieve waitlist statistics'
+      message: "Failed to retrieve waitlist statistics",
     });
   }
 };
 
+const deleteWaitlistEntry = async (req, res) => {
+  const email = req.params.email;
+
+  try {
+    const result = await Waitlist.findOneAndDelete({ email });
+
+    if (!result) {
+      return res.status(404).json({
+        success: false,
+        message: `No user found with email: ${email}`,
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: `User with email ${email} successfully deleted.`,
+    });
+  } catch (error) {
+    console.error("Error deleting waitlist entry:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error while deleting user",
+      error: error.message,
+    });
+  }
+};
+
+
 module.exports = {
-admAccess, 
+  admAccess,
   createWaitlistEntry,
   getAllWaitlistEntries,
   getWaitlistEntryById,
   getWaitlistEntryByEmail,
-  getWaitlistStats
+  getWaitlistStats,
+  deleteWaitlistEntry
 };
