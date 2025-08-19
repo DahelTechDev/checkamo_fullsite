@@ -764,156 +764,17 @@
         <div class="container">
           <h2 class="faq-title">🙋 Frequently Asked, Clearly Answered</h2>
 
-          <div class="faq-container">
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>What is Checkamo?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Checkamo is a trusted middleman platform that helps verify
-                products, properties, or people before you make payments. We
-                physically inspect and report on your behalf to prevent scams.
-              </div>
-            </div>
+          <div class="faq-container" id="faq-container">
+            <!-- FAQs will be injected here -->
+          </div>
 
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>How does Checkamo help me avoid getting scammed?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                By sending a verified checker to inspect and report the real
-                condition of the item, seller, or person before you pay, we
-                bridge the gap between online promises and offline reality.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>Who are the verifiers on Checkamo?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                They are trained, background-verified individuals in different
-                cities. Every verifier shares real-time location, uploads
-                photos/videos, and must meet strict reporting standards.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>Is Checkamo only for buyers?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                No. Sellers, agents, landlords, and business owners can also use
-                Checkamo to prove authenticity, build trust, and close sales
-                faster.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>Is Checkamo a delivery service?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                No. We don’t handle delivery, but we confirm that the product or
-                person you’re dealing with is real, safe, and as described. We
-                hope to partner with delivery services in future.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>What types of items can be verified?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                We verify mobile phones, electronics, clothes, properties,
-                services, people (e.g., house agents, online sellers, sex
-                workers), and even secondhand or used items.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span
-                  >Can I use Checkamo for property or house rent
-                  verification?</span
-                >
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Yes. We verify houses, agents, ownership, and neighbourhood
-                safety. You’ll receive pictures, videos, voice notes, and
-                verifier feedback.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span
-                  >Can Checkamo verify people or service providers (like tutors
-                  or freelancers)?</span
-                >
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Absolutely. We verify identities, track records, and provide
-                background checks if needed.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>How long does a verification take?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Typically, within 24–48 hours, depending on location and
-                availability. Urgent/express options are also available.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span
-                  >What if the seller or person being verified refuses to
-                  cooperate?</span
-                >
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                You’ll be informed immediately. This often reveals red flags. We
-                consider uncooperative behaviour a form of warning itself.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>How much does it cost to use Checkamo?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Prices vary by location and type of verification. Basic checks
-                start at affordable rates. Premium features (video walkthroughs,
-                detailed voice reports, express response, etc) cost more.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <span>Is my payment safe with Checkamo?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Yes. All payments are encrypted and handled through secure
-                channels. We don’t store card data, and refund policies apply in
-                some situations.
-              </div>
-            </div>
+          <div style="text-align: center; margin-top: 20px; cursor: pointer;">
+            <button
+              id="load-more-faq"
+              style="padding: 10px 20px; font-size: 16px; background-color: white; color: #010d26; border: none; border-radius: 5px; cursor: pointer;"
+            >
+              Load More
+            </button>
           </div>
         </div>
       </section>
@@ -921,6 +782,7 @@
       <footer class="footer">
         <div class="footer-content">
           <!-- Column 1: Mini Company Details -->
+
           <div class="footer-column company-column">
             <div class="logo montserrat">
               <img src="/waitlistAssets/images/LOGO 4.png" alt="logo" />
@@ -1013,7 +875,7 @@
               <li><a href="/coming-soon">Contact Us</a></li>
               <li><a href="/coming-soon">Help Center</a></li>
               <li><a href="/coming-soon">Careers</a></li>
-              <li><a href="/coming-soon">Press & Media</a></li>
+              <!-- <li><a href="/coming-soon">Press & Media</a></li> -->
             </ul>
           </div>
 
@@ -1021,12 +883,13 @@
           <div class="footer-column">
             <h3>For Users</h3>
             <ul class="footer-links">
-              <li><a href="/coming-soon">Become a Verifier</a></li>
-              <li><a href="/coming-soon">Submit a Complaint</a></li>
-              <li><a href="/coming-soon">Request a Check</a></li>
-              <li><a href="/coming-soon">Find a Verified Agent</a></li>
-              <li><a href="/coming-soon">Partner With Us</a></li>
+              <li><a href="/join">Become a Verifier</a></li>
+              <!-- <li><a href="/coming-soon">Submit a Complaint</a></li> -->
+              <li><a href="/join">Request a Check</a></li>
+              <!-- <li><a href="/coming-soon">Find a Verified Agent</a></li> -->
+              <li><a href="https://wa.me/+14019964759" target="_blank">Partner With Us</a></li>
               <li><a href="/coming-soon">Refer a Friend</a></li>
+              <li><a href="/coming-soon">Volunteer</a></li>
             </ul>
           </div>
 
@@ -1035,13 +898,13 @@
             <h3>Legal</h3>
             <ul class="footer-links">
               <li><a href="/terms-of-service">Terms of Service</a></li>
-              <li><a href="/privacy-policy#legal-counsel">Legal Counsel</a></li>
+              <!-- <li><a href="/privacy-policy#legal-counsel">Legal Counsel</a></li> -->
               <li>
-                <a href="/privacy-policy#data-control">Data Privacy Policy</a>
+                <a href="/privacy-policy#data-control">Privacy Policy</a>
               </li>
-              <li><a href="/privacy-policy#cookiess">Cookie Policy</a></li>
-              <li><a href="/coming-soon">Community Guidelines</a></li>
-              <li><a href="/coming-soon">Report Abuse</a></li>
+              <!-- <li><a href="/privacy-policy#cookiess">Cookie Policy</a></li> -->
+              <!-- <li><a href="/coming-soon">Community Guidelines</a></li> -->
+              <!-- <li><a href="/coming-soon">Report Abuse</a></li> -->
             </ul>
           </div>
         </div>
@@ -1050,9 +913,9 @@
         <div class="sub-footer">
           <div class="copyright">© 2025 Checkamo. All rights reserved.</div>
           <div class="sub-footer-links">
-            <a href="/terms-of-service">Terms of Use</a>
             <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/privacy-policy#cookiess">Cookie Settings</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <!-- <a href="/privacy-policy#cookiess">Cookie Settings</a> -->
           </div>
         </div>
       </footer>
