@@ -549,35 +549,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //  JOIN US et FAQ SECTION
 // Observe elements for animation
-        const observerL = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+const observerL = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
 
 document.querySelectorAll(".content-left, .content-right").forEach((el) => {
   observerL.observe(el);
-});
-
-// FAQ Accordion Functionality
-document.querySelectorAll(".faq-item").forEach((item) => {
-  const question = item.querySelector(".faq-question");
-
-  question.addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
-
-    // Close all FAQ items
-    document.querySelectorAll(".faq-item").forEach((faqItem) => {
-      faqItem.classList.remove("active");
-    });
-
-    // Open clicked item if it wasn't active
-    if (!isActive) {
-      item.classList.add("active");
-    }
-  });
 });
 
 document.querySelector(".cta-button").addEventListener("click", (e) => {
@@ -587,101 +568,101 @@ document.querySelector(".cta-button").addEventListener("click", (e) => {
 
 
 // FAQ section
- const faqs = [
-    {
-      question: "What is Checkamo?",
-      answer: "Checkamo is a trusted middleman platform that helps verify products, properties, or people before you make payments. We physically inspect and report on your behalf to prevent scams."
-    },
-    {
-      question: "How does Checkamo help me avoid getting scammed?",
-      answer: "By sending a verified checker to inspect and report the real condition of the item, seller, or person before you pay, we bridge the gap between online promises and offline reality."
-    },
-    {
-      question: "Who are the verifiers on Checkamo?",
-      answer: "They are trained, background-verified individuals in different cities. Every verifier shares real-time location, uploads photos/videos, and must meet strict reporting standards."
-    },
-    {
-      question: "Is Checkamo only for buyers?",
-      answer: "No. Sellers, agents, landlords, and business owners can also use Checkamo to prove authenticity, build trust, and close sales faster."
-    },
-    {
-      question: "Is Checkamo a delivery service?",
-      answer: "No. We don’t handle delivery, but we confirm that the product or person you’re dealing with is real, safe, and as described. We hope to partner with delivery services in future."
-    },
-    {
-      question: "What types of items can be verified?",
-      answer: "We verify mobile phones, electronics, clothes, properties, services, people (e.g., house agents, online sellers, sex workers), and even secondhand or used items."
-    },
-    {
-      question: "Can I use Checkamo for property or house rent verification?",
-      answer: "Yes. We verify houses, agents, ownership, and neighbourhood safety. You’ll receive pictures, videos, voice notes, and verifier feedback."
-    },
-    {
-      question: "Can Checkamo verify people or service providers (like tutors or freelancers)?",
-      answer: "Absolutely. We verify identities, track records, and provide background checks if needed."
-    },
-    {
-      question: "How long does a verification take?",
-      answer: "Typically, within 24–48 hours, depending on location and availability. Urgent/express options are also available."
-    },
-    {
-      question: "What if the seller or person being verified refuses to cooperate?",
-      answer: "You’ll be informed immediately. This often reveals red flags. We consider uncooperative behaviour a form of warning itself."
-    },
-    {
-      question: "How much does it cost to use Checkamo?",
-      answer: "Prices vary by location and type of verification. Basic checks start at affordable rates. Premium features (video walkthroughs, detailed voice reports, express response, etc) cost more."
-    },
-    {
-      question: "Is my payment safe with Checkamo?",
-      answer: "Yes. All payments are encrypted and handled through secure channels. We don’t store card data, and refund policies apply in some situations."
-    },
-    {
-      question: "What if the verifier does a bad job or lies?",
-      answer: "Verifiers are rated after each task. Bad actors are flagged, removed, and users may be refunded or reassigned based on review."
-    },
-    {
-      question: "Can I get a refund if I’m not satisfied with the report?",
-      answer: "If the report clearly falls below Checkamo’s standard or shows negligence, we offer a refund or re-verification."
-    },
-    {
-      question: "Is my identity or transaction kept private?",
-      answer: "Yes. We protect your identity and details. Discreet options are also available for sensitive use cases (e.g., sex work, adult product purchases)."
-    },
-    {
-      question: "Do I need to download an app to use Checkamo?",
-      answer: "You can use our web platform, but for the full experience (including tracking, media upload, and push notifications), we recommend using the Checkamo mobile app."
-    },
-    {
-      question: "How do I book a verifier?",
-      answer: "Enter what you want verified, the location, and when. You'll see available verifiers and their ratings, then proceed to book and pay. In other cases, the verifier close to the vendor or person will accept your request. Only you will be able to vet and allow the verifier to get to work."
-    },
-    {
-      question: "Can I track the verifier in real-time?",
-      answer: "Yes. Our system allows live GPS tracking while verification is in progress for transparency and security. You can also use the chat section on our platform to follow up with our customer service representative."
-    },
-    {
-      question: "What if I’m not in Nigeria? Can I still use Checkamo?",
-      answer: "Yes! You can request verifications in Nigeria from anywhere in the world. Many Nigerians in the diaspora use us to verify deals and people locally. Checkamo will expand to more communities in future."
-    },
-    {
-      question: "Does Checkamo work with platforms like Jiji, Facebook Marketplace, or Instagram sellers?",
-      answer: "Yes. If you found a seller online, we can verify their claims before you pay. Just copy their contact and product details during booking, then visit Checkamo and get our verifiers to confirm what you want to buy before you release that money to them or anyone."
-    }
-  ];
+const faqs = [
+  {
+    question: "What is Checkamo?",
+    answer: "Checkamo is a trusted middleman platform that helps verify products, properties, or people before you make payments. We physically inspect and report on your behalf to prevent scams."
+  },
+  {
+    question: "How does Checkamo help me avoid getting scammed?",
+    answer: "By sending a verified checker to inspect and report the real condition of the item, seller, or person before you pay, we bridge the gap between online promises and offline reality."
+  },
+  {
+    question: "Who are the verifiers on Checkamo?",
+    answer: "They are trained, background-verified individuals in different cities. Every verifier shares real-time location, uploads photos/videos, and must meet strict reporting standards."
+  },
+  {
+    question: "Is Checkamo only for buyers?",
+    answer: "No. Sellers, agents, landlords, and business owners can also use Checkamo to prove authenticity, build trust, and close sales faster."
+  },
+  {
+    question: "Is Checkamo a delivery service?",
+    answer: "No. We don’t handle delivery, but we confirm that the product or person you’re dealing with is real, safe, and as described. We hope to partner with delivery services in future."
+  },
+  {
+    question: "What types of items can be verified?",
+    answer: "We verify mobile phones, electronics, clothes, properties, services, people (e.g., house agents, online sellers, sex workers), and even secondhand or used items."
+  },
+  {
+    question: "Can I use Checkamo for property or house rent verification?",
+    answer: "Yes. We verify houses, agents, ownership, and neighbourhood safety. You’ll receive pictures, videos, voice notes, and verifier feedback."
+  },
+  {
+    question: "Can Checkamo verify people or service providers (like tutors or freelancers)?",
+    answer: "Absolutely. We verify identities, track records, and provide background checks if needed."
+  },
+  {
+    question: "How long does a verification take?",
+    answer: "Typically, within 24–48 hours, depending on location and availability. Urgent/express options are also available."
+  },
+  {
+    question: "What if the seller or person being verified refuses to cooperate?",
+    answer: "You’ll be informed immediately. This often reveals red flags. We consider uncooperative behaviour a form of warning itself."
+  },
+  {
+    question: "How much does it cost to use Checkamo?",
+    answer: "Prices vary by location and type of verification. Basic checks start at affordable rates. Premium features (video walkthroughs, detailed voice reports, express response, etc) cost more."
+  },
+  {
+    question: "Is my payment safe with Checkamo?",
+    answer: "Yes. All payments are encrypted and handled through secure channels. We don’t store card data, and refund policies apply in some situations."
+  },
+  {
+    question: "What if the verifier does a bad job or lies?",
+    answer: "Verifiers are rated after each task. Bad actors are flagged, removed, and users may be refunded or reassigned based on review."
+  },
+  {
+    question: "Can I get a refund if I’m not satisfied with the report?",
+    answer: "If the report clearly falls below Checkamo’s standard or shows negligence, we offer a refund or re-verification."
+  },
+  {
+    question: "Is my identity or transaction kept private?",
+    answer: "Yes. We protect your identity and details. Discreet options are also available for sensitive use cases (e.g., sex work, adult product purchases)."
+  },
+  {
+    question: "Do I need to download an app to use Checkamo?",
+    answer: "You can use our web platform, but for the full experience (including tracking, media upload, and push notifications), we recommend using the Checkamo mobile app."
+  },
+  {
+    question: "How do I book a verifier?",
+    answer: "Enter what you want verified, the location, and when. You'll see available verifiers and their ratings, then proceed to book and pay. In other cases, the verifier close to the vendor or person will accept your request. Only you will be able to vet and allow the verifier to get to work."
+  },
+  {
+    question: "Can I track the verifier in real-time?",
+    answer: "Yes. Our system allows live GPS tracking while verification is in progress for transparency and security. You can also use the chat section on our platform to follow up with our customer service representative."
+  },
+  {
+    question: "What if I’m not in Nigeria? Can I still use Checkamo?",
+    answer: "Yes! You can request verifications in Nigeria from anywhere in the world. Many Nigerians in the diaspora use us to verify deals and people locally. Checkamo will expand to more communities in future."
+  },
+  {
+    question: "Does Checkamo work with platforms like Jiji, Facebook Marketplace, or Instagram sellers?",
+    answer: "Yes. If you found a seller online, we can verify their claims before you pay. Just copy their contact and product details during booking, then visit Checkamo and get our verifiers to confirm what you want to buy before you release that money to them or anyone."
+  }
+];
 
-  const container = document.getElementById('faq-container');
-  const loadMoreBtn = document.getElementById('load-more-faq');
-  let visibleCount = 0;
-  const increment = 5;
+const container = document.getElementById('faq-container');
+const loadMoreBtn = document.getElementById('load-more-faq');
+let visibleCount = 0;
+const increment = 5;
 
-  function renderFAQs(start, end) {
-    const fragment = document.createDocumentFragment();
-    for (let i = start; i < end && i < faqs.length; i++) {
-      const item = document.createElement('div');
-      item.className = 'faq-item';
+function renderFAQs(start, end) {
+  const fragment = document.createDocumentFragment();
+  for (let i = start; i < end && i < faqs.length; i++) {
+    const item = document.createElement('div');
+    item.className = 'faq-item';
 
-      item.innerHTML = `
+    item.innerHTML = `
         <div class="faq-question">
           <span>${faqs[i].question}</span>
           <span class="faq-icon">+</span>
@@ -690,20 +671,37 @@ document.querySelector(".cta-button").addEventListener("click", (e) => {
           ${faqs[i].answer}
         </div>
       `;
-      fragment.appendChild(item);
-    }
-    container.appendChild(fragment);
+    fragment.appendChild(item);
   }
+  container.appendChild(fragment);
+}
 
-  // Initial load
-  renderFAQs(0, increment);
+// Initial load
+renderFAQs(0, increment);
+visibleCount += increment;
+
+loadMoreBtn.addEventListener('click', () => {
+  renderFAQs(visibleCount, visibleCount + increment);
   visibleCount += increment;
 
-  loadMoreBtn.addEventListener('click', () => {
-    renderFAQs(visibleCount, visibleCount + increment);
-    visibleCount += increment;
+  if (visibleCount >= faqs.length) {
+    loadMoreBtn.style.display = 'none';
+  }
+});
+  // FAQ Accordion Functionality
+container.addEventListener("click", (e) => {
+  const clicked = e.target.closest(".faq-question");
+  if (!clicked) return;
 
-    if (visibleCount >= faqs.length) {
-      loadMoreBtn.style.display = 'none';
-    }
+  const item = clicked.closest(".faq-item");
+  const isActive = item.classList.contains("active");
+
+  // Close all
+  document.querySelectorAll(".faq-item").forEach((faqItem) => {
+    faqItem.classList.remove("active");
   });
+
+  if (!isActive) {
+    item.classList.add("active");
+  }
+});
