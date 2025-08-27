@@ -11,7 +11,7 @@ router.post("/auth", waitlistController.admAccess);
 
 
 // POST /api/waitlist - Create a new waitlist entry
-router.post("/", authMiddleware, waitlistController.createWaitlistEntry);
+router.post("/", waitlistController.createWaitlistEntry);
 
 // GET /api/waitlist - Get all waitlist entries (with optional filters)
 // Query params: ?wantToBeVerifier=yes&industry=Tech&language=English

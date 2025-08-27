@@ -119,13 +119,13 @@ function setupForm() {
     div.className = "checkbox-item";
     div.innerHTML = `
             <input type="checkbox" id="${interest.replace(
-              /\s+/g,
-              ""
-            )}" name="interests" value="${interest}" class="checkbox">
+      /\s+/g,
+      ""
+    )}" name="interests" value="${interest}" class="checkbox">
             <label for="${interest.replace(
-              /\s+/g,
-              ""
-            )}" style="color: #cbd5e1; font-size: 0.875rem; cursor: pointer;">${interest}</label>
+      /\s+/g,
+      ""
+    )}" style="color: #cbd5e1; font-size: 0.875rem; cursor: pointer;">${interest}</label>
         `;
     interestsGrid.appendChild(div);
   });
@@ -186,15 +186,15 @@ function setupTestimonials() {
             </div>
             <div class="stars">
                 ${Array(5)
-                  .fill()
-                  .map(
-                    () => `
+        .fill()
+        .map(
+          () => `
                     <svg class="star" viewBox="0 0 24 24" fill="currentColor">
                         <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
                     </svg>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
             </div>
             <p style="color: #cbd5e1;">${testimonial.text}</p>
         `;
@@ -323,6 +323,7 @@ async function handleSubmit(e) {
     });
 
     if (!response.ok) {
+      console.log(response)
       throw new Error("Failed to create user");
     }
 
@@ -330,21 +331,22 @@ async function handleSubmit(e) {
     console.log("User created successfully:", result);
 
     // Close modal
-    closeCreateModal();
+    // closeCreateModal();
 
-  // Increment waitlist count
-  waitlistCount++;
+    // Increment waitlist count
+    waitlistCount++;
 
-  // Show success page
-  showSuccessPage();
+    // Show success page
+    showSuccessPage();
 
-  // Trigger confetti
-  triggerConfetti();
+    // Trigger confetti
+    triggerConfetti();
 
     // Show success message
-    alert("User added to waitlist successfully!");
+    // alert("User added to waitlist successfully!");
   } catch (error) {
     console.error("Error creating user:", error);
+    console.log(error);
     alert("Failed to add user to waitlist. Please try again.");
   } finally {
     // Reset button state

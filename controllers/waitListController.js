@@ -6,7 +6,7 @@ const admAccess = async (req, res) => {
   try {
     const adm_pass = process.env.ADM_PASS;
     const password = req.body.password;
-    console.log(adm_pass, password, " do there match??");
+    // console.log(adm_pass, password, " do there match??");
     if (adm_pass.toString() !== password.toString()) {
       // console.log("no match", adm_pass.toString() , password.toString())
       return res
@@ -41,7 +41,7 @@ const admAccess = async (req, res) => {
 
 // Create a new waitlist entry
 const createWaitlistEntry = async (req, res) => {
-
+  console.log("accessing createWaitlistEntry"); 
   try {
     const data = req.body;
 

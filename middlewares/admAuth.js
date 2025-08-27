@@ -4,6 +4,7 @@ module.exports = (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token) {
+    console.log("NO TOKEN!!!")
     return res.status(401).json({ message: 'No token, authorization denied' });
   }
 

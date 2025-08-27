@@ -33,7 +33,8 @@ const waitlistSchema = new mongoose.Schema({
   
   interests: [{
     type: String,
-    required: true,
+    default: ["General Interest"],
+    trim: true
   }],
   
   industry: {
@@ -49,8 +50,8 @@ const waitlistSchema = new mongoose.Schema({
   
   wantToBeVerifier: {
     type: String,
-    required: [true, 'Verifier preference is required'],
     enum: ['yes', 'no'],
+    default: 'no',
     lowercase: true
   },
   
