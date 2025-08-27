@@ -1279,46 +1279,53 @@ body {
   transform: translateX(-50%);
 }
 
-.social-buttons {
+.social-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 14px;
   justify-content: center;
-}
-
-.social-button {
-  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.social-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s;
+  background-color: #f0f0f0;
 }
 
-.social-button.twitter {
-  background: #1da1f2;
-  color: white;
+.social-icon:hover {
+  transform: scale(1.1);
 }
 
-.social-button.twitter:hover {
-  background: #1a94e0;
+.social-icon.instagram {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg');
 }
 
-.social-button.whatsapp {
-  background: #25d366;
-  color: white;
+.social-icon.linkedin {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg');
 }
 
-.social-button.whatsapp:hover {
-  background: #20ba5a;
+.social-icon.tiktok {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/tiktok.svg');
+}
+
+.social-icon.youtube {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg');
+}
+
+.social-icon.twitter {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/x.svg');
+}
+
+.social-icon.whatsapp {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/whatsapp.svg');
 }
 
 /* Footer */
@@ -1461,11 +1468,6 @@ body {
 
   .steps-grid {
     grid-template-columns: 1fr;
-  }
-
-  .social-buttons {
-    flex-direction: column;
-    align-items: center;
   }
 }
 

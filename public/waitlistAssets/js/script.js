@@ -62,7 +62,7 @@ const interestOptions = [
 ];
 
 // State
-let waitlistCount = 2847;
+let waitlistCount = 3847;
 const formData = {
   fullName: "",
   email: "",

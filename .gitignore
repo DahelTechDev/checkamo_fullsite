@@ -45,9 +45,5 @@ coverage/
 .pids/
 *.pm2.log
 
-# Optional: if using Prisma or similar tools
-prisma/dev.db
-prisma/*.sqlite
-
 # Optional: if you're using eslint/prettier cache
 .eslintcache
