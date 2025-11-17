@@ -402,6 +402,9 @@
     </style>
 </head>
 <body>
+    <body>
+
+    
     <div class="container">
         <div class="header">
             <h1>Admin Dashboard</h1>
@@ -447,9 +450,23 @@
                     <option value="position">Position</option>
                 </select>
             </div>
-            <button class="btn" onclick="openCreateModal()">
-                <span>+</span> Add New User
-            </button>
+            <div>
+                <button class="btn" onclick="openCreateModal()">
+                    <span>+</span> Add New User
+                </button>
+                <button onclick="exportToCSV()" style="
+                    padding: 10px 20px;
+                    background-color: #10b981;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                ">
+                    Export to CSV
+                </button>
+            </div>
         </div>
 
         <div class="users-table">
@@ -1011,9 +1028,6 @@
             }
         }
 
-        
-
-
 
         async function handleSubmit(e) {
             e.preventDefault();
@@ -1083,6 +1097,92 @@
             }
         }
 
+        // CSV Export Function
+        function exportToCSV() {
+            try {
+                // Use the existing waitlistData array
+                if (!waitlistData || waitlistData.length === 0) {
+                    alert('No users to export');
+                    return;
+                }
+
+                // Define CSV headers based on waitlist data structure
+                const headers = [
+                    'Position',
+                    'Full Name',
+                    'Email',
+                    'Phone',
+                    'Address',
+                    'Industry',
+                    'Language',
+                    'User Type',
+                    'Verifier Locations',
+                    'Interests',
+                    'Status',
+                    'Joined Date'
+                ];
+                
+                // Convert waitlist entries to CSV rows
+                const rows = waitlistData.map(user => {
+                    const position = user.position || '';
+                    const fullName = (user.fullName || '').replace(/"/g, '""');
+                    const email = user.email || '';
+                    const phone = user.phone || '';
+                    const address = (user.address || '').replace(/"/g, '""');
+                    const industry = user.industry || '';
+                    const language = user.language || '';
+                    const userType = user.wantToBeVerifier === 'yes' ? 'Verifier' : 'Normal User';
+                    const verifierLocations = user.wantToBeVerifier === 'yes' ? 
+                        (user.verifierLocations?.join('; ') || '') : '';
+                    const interests = (user.interests?.join('; ') || '').replace(/"/g, '""');
+                    const status = user.status || '';
+                    const joinedDate = user.formattedJoinDate || 
+                        (user.joinedAt ? new Date(user.joinedAt).toLocaleDateString() : '');
+                    
+                    return [
+                        position,
+                        `"${fullName}"`,
+                        email,
+                        phone,
+                        `"${address}"`,
+                        industry,
+                        language,
+                        userType,
+                        `"${verifierLocations}"`,
+                        `"${interests}"`,
+                        status,
+                        joinedDate
+                    ];
+                });
+
+                // Combine headers and rows
+                const csvContent = [
+                    headers.join(','),
+                    ...rows.map(row => row.join(','))
+                ].join('\n');
+
+                // Create blob and download
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                
+                link.setAttribute('href', url);
+                link.setAttribute('download', `waitlist_export_${new Date().toISOString().split('T')[0]}.csv`);
+                link.style.visibility = 'hidden';
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Clean up
+                URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Export failed:', error);
+                alert('Failed to export waitlist data');
+            }
+        }
+        
         // Add form submission handler
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('createUserForm');
