@@ -45,7 +45,7 @@ To become the go-to platform for **real-time, on-ground verifications** by conne
 ---
 
 ## 📐 Project Structure Recommendation
-
+```
 checkamo/
 ├── frontend/ # React/Next.js or Vue SPA
 │ ├── pages/
@@ -63,7 +63,7 @@ checkamo/
 ├── public/
 ├── README.md
 └── .env.example
-
+```
 ---
 
 ## 🌐 Tech Stack Suggestion
